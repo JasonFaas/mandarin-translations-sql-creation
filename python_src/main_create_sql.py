@@ -39,13 +39,13 @@ def hanzi_with_spaces (row):
     return what
 
 
-csv_file_path = '../raw_data/first.csv'
-df = pd.read_csv(csv_file_path)
+df = pd.read_csv('../raw_data/first.csv')
 print(df)
-df['pinyin'] = df.apply(lambda row: pinyin_from_hanzi(row), axis=1)
+df['Pinyin'] = df.apply(lambda row: pinyin_from_hanzi(row), axis=1)
 df['Hanzi'] = df.apply(lambda row: hanzi_with_spaces(row), axis=1)
 
-df.to_csv('../sql/final.csv', index=False)
+final_csv = '../sql/final.csv'
+df.to_csv(final_csv, index=False)
 
 
 database_name = "../sql/first.sqlite3"
@@ -54,26 +54,31 @@ os.remove(database_name)
 
 con = sqlite3.connect(database_name)
 cur = con.cursor()
-columns = ('''Hanzi''', '''English''', '''Difficulty''')
+columns = ('''Hanzi''',
+           '''English''',
+           '''Difficulty''',
+           '''Pinyin''')
 cur.execute('''CREATE TABLE Translations
              (
                  [generated_id] INTEGER PRIMARY KEY,
                  [%s] text, 
                  [%s] text,
-                 [%s] INTEGER
+                 [%s] INTEGER,
+                 [%s] text
              )
              ''' % columns)
 
-with open(csv_file_path, 'rt') as fin:  # `with` statement available in 2.5+
+with open(final_csv, 'rt') as fin:  # `with` statement available in 2.5+
     # csv.DictReader uses first line in file for column headings by default
     dr = csv.DictReader(fin)  # comma is default delimiter
     to_db = [
-                (
-                    i[('%s' % columns[0])],
-                    i[('%s' % columns[1])],
-                    i[('%s' % columns[2])],
-                )
-            for i in dr]
+        (
+            i[('%s' % columns[0])],
+            i[('%s' % columns[1])],
+            i[('%s' % columns[2])],
+            i[('%s' % columns[3])],
+        )
+        for i in dr]
 
 percent_s = ", ".join(['%s'] * len(columns))
 question_mark = ", ".join(['?'] * len(columns))
