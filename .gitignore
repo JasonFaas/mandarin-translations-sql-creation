@@ -107,4 +107,4 @@ venv.bak/
 .idea/
 
 # SQLite
-*.sqlite3
+sql/
