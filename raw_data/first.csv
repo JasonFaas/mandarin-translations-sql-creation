@@ -1,6 +1,12 @@
-col1,col2
-a,b
-c,d
-e,f
-g,h
-i,j
+Hanzi,English,Difficulty,Pinyin
+你好,Hello,0
+谢谢,Thank you,0
+没问题,No Problem,0
+对不起,I'm sorry,0
+我不知道,I do not know,0
+我不明白,I do not understand,0
+可再说一遍吗,Can you say it again?,0
+等一下,Just a moment,0
+不客气,You are welcome,0
+多少钱,How much does it cost?,0
+我是美国人,I am an American,1
