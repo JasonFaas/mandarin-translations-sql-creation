@@ -61,3 +61,24 @@ for hanzi_group in hanzi_arr:
     print("")
 
 print(pinyin_final.strip())
+
+print(pinyin_final.replace(" ", ""))
+
+
+
+print('\n\nVerifying Translations')
+# Verify translations
+verifications = [
+    ['你好', 'nǐhǎo'],
+    ['谢谢', 'xièxiè'],
+    ['你叫什么名字', 'nǐjiàoshénmemíngzì'],
+]
+
+errors = False
+for hanzi_text, pinyin_text in verifications:
+    translation = pinyin.get(hanzi_text, delimiter="")
+    if translation != pinyin_text:
+        errors = True
+        print('{} -> {} != {}'.format(hanzi_text, translation, pinyin_text))
+
+assert not errors
