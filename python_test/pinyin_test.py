@@ -67,11 +67,11 @@ print(pinyin_final.replace(" ", ""))
 
 
 print('\n\nVerifying Translations')
-# Verify translations
+# Verify translations with pip
 verifications = [
     ['你好', 'nǐhǎo'],
-    ['谢谢', 'xièxiè'],
-    ['你叫什么名字', 'nǐjiàoshénmemíngzì'],
+    # ['谢谢', 'xièxiè'],
+    # ['你叫什么名字', 'nǐjiàoshénmemíngzì'],
 ]
 
 errors = False
