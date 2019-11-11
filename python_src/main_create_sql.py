@@ -60,7 +60,7 @@ columns = ('''Hanzi''',
            '''Pinyin''')
 cur.execute('''CREATE TABLE Translations
              (
-                 [generated_id] INTEGER PRIMARY KEY,
+                 [id] INTEGER PRIMARY KEY,
                  [%s] text, 
                  [%s] text,
                  [%s] INTEGER,

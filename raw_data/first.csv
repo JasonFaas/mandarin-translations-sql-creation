@@ -1,12 +1,19 @@
 Hanzi,English,Difficulty
-你好,Hello,0
-谢谢,Thank you,0
-没问题,No Problem,0
-对不起,I'm sorry,0
-我不知道,I do not know,0
-我不明白,I do not understand,0
-可再说一遍吗,Can you say it again?,0
-等一下,Just a moment,0
-不客气,You are welcome,0
-多少钱,How much does it cost?,0
-我是美国人,I am an American,1
+你好,Hello,1
+谢谢,Thank you,1
+没问题,No Problem,1
+对不起,I'm sorry,1
+我不知道,I do not know,1
+我不明白,I do not understand,1
+可再说一遍吗,Can you say it again?,1
+等一下,Just a moment,1
+不客气,You are welcome,1
+多少钱,How much does it cost?,1
+我是美国人,I am an American,11
+我今年三十二岁,I am 32 years old,15
+你住在哪里,Where do you live?,12
+生日快乐,Happy Birthday,8
+新年快乐,Happy New Year,7
+我对鱼过敏,I am allergic to fish,23
+你叫什么名字,What is your name?,5
+可以请你喝一杯吗,Can I buy you a drink?,44
