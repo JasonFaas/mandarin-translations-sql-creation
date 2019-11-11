@@ -119,6 +119,7 @@ verifications = [
     ['你好', 'nǐhǎo'],
     ['我今年三十二岁', 'wǒjīnniánsānshí\'èrsuì'],
     ['你叫什么名字', 'nǐjiàoshénmemíngzì'],
+    ['生日快乐', 'shēngrìkuàilè']
 ]
 
 print('\nVerifying Translations With \'pinyin\'', flush=True)
