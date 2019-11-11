@@ -39,17 +39,44 @@ def hanzi_with_spaces(row):
     return what
 
 
-df = pd.read_csv('../raw_data/first.csv')
-print(df)
-df['Pinyin'] = df.apply(lambda row: pinyin_from_hanzi(row), axis=1)
-df['Hanzi'] = df.apply(lambda row: hanzi_with_spaces(row), axis=1)
+def verify_no_new_old_duplicates(df_1, df_2):
+    set_1 = set(df_1['Hanzi'].tolist())
+    set_2 = set(df_2['Hanzi'].tolist())
 
-final_csv = '../sql/final.csv'
-df.to_csv(final_csv, index=False)
+    if len(set_1.intersection(set_2)) > 0:
+        print('\n\nERROR_ERROR_ERROR:\nNew and old sets should not overlap')
+        print(set_1)
+        print(set_2)
+        exit(0)
 
 
+output_csv_filename = '../raw_data/output.csv'
+input_csv_filename = '../raw_data/input.csv'
+
+# read in known output
+df_existing_output = pd.read_csv(output_csv_filename)
+df_new_input = pd.read_csv(input_csv_filename)
+
+# verify no new input conflicts
+verify_no_new_old_duplicates(df_new_input, df_existing_output)
+
+# get info for new input to output
+
+df_new_input['Pinyin'] = df_new_input.apply(lambda row: pinyin_from_hanzi(row), axis=1)
+df_new_input['Hanzi'] = df_new_input.apply(lambda row: hanzi_with_spaces(row), axis=1)
+
+df_merged = pd.concat([df_existing_output, df_new_input], ignore_index=True)
+print(df_merged)
+
+# update output file
+df_merged.to_csv(output_csv_filename, index=False)
+
+# remove all data from input file
+df_empty = df_new_input[0:0]
+df_empty.to_csv(input_csv_filename, index=False)
+
+# create database from output
 database_name = "../sql/first.sqlite3"
-
 os.remove(database_name)
 
 con = sqlite3.connect(database_name)
@@ -68,7 +95,7 @@ cur.execute('''CREATE TABLE Translations
              )
              ''' % columns)
 
-with open(final_csv, 'rt') as fin:  # `with` statement available in 2.5+
+with open(output_csv_filename, 'rt') as fin:  # `with` statement available in 2.5+
     # csv.DictReader uses first line in file for column headings by default
     dr = csv.DictReader(fin)  # comma is default delimiter
     to_db = [

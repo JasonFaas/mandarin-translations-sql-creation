@@ -82,3 +82,7 @@ for hanzi_text, pinyin_text in verifications:
         print('{} -> {} != {}'.format(hanzi_text, translation, pinyin_text))
 
 assert not errors
+
+
+
+# Verify adding to final.csv instead of creating new
