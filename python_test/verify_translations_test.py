@@ -150,19 +150,27 @@ what_me = {'translation':
 # # print(what_me)
 # exit(0)
 
-print('\nVerifying Translations With \'googletrans\'', flush=True)
-googletrans_errors = False
 googletrans_translator = Translator()
-for hanzi_text, pinyin_text in verifications:
-    translation = googletrans_translator.translate(hanzi_text, src='zh-cn', dest='en')
-    print(translation, flush=True)
-    print(translation.extra_data, flush=True)
-    # print(translation.origin, ' -> ', translation.text, flush=True)
-    googletrans_to_pinyin = translation.extra_data['translation'][1][-1].lower().replace(' ', '')
-    print(translation.origin, ' -> ', googletrans_to_pinyin)
+def pinyin_from_hanzi_googletrans(hanzi):
+    global googletrans_translator
+    gt_translation = googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
+    print(gt_translation, flush=True)
+    print(gt_translation.extra_data, flush=True)
+    # print(gt_translation.origin, ' -> ', gt_translation.text, flush=True)
+    translation_return = gt_translation.extra_data['translation'][1][-1].lower()
+    print(gt_translation.origin, ' -> ', translation_return)
     print('\n', flush=True)
 
-    if googletrans_to_pinyin != pinyin_text:
+    return translation_return
+
+print('\nVerifying Translations With \'googletrans\'', flush=True)
+googletrans_errors = False
+
+for hanzi_text, pinyin_text in verifications:
+    translation_pinyin = pinyin_from_hanzi_googletrans(hanzi_text)
+    translation_pinyin = translation_pinyin.replace(' ', '')
+
+    if translation_pinyin != pinyin_text:
         googletrans_errors = True
         print('{} -> {} != {}'.format(hanzi_text, googletrans_to_pinyin, pinyin_text), flush=True)
 

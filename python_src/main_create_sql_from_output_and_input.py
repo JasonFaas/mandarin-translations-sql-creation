@@ -39,6 +39,23 @@ def hanzi_with_spaces(row):
     return what
 
 
+from googletrans import Translator
+googletrans_translator = Translator()
+def pinyin_from_hanzi_googletrans(row):
+    global googletrans_translator
+
+    hanzi = row['Hanzi']
+    gt_translation = googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
+    print(gt_translation, flush=True)
+    print(gt_translation.extra_data, flush=True)
+    # print(gt_translation.origin, ' -> ', gt_translation.text, flush=True)
+    translation_return = gt_translation.extra_data['translation'][1][-1].lower()
+    print(gt_translation.origin, ' -> ', translation_return)
+    print('\n', flush=True)
+
+    return translation_return
+
+
 def verify_no_new_old_duplicates(df_1, df_2):
     set_1 = set(df_1['Hanzi'].tolist())
     set_2 = set(df_2['Hanzi'].tolist())
@@ -62,7 +79,7 @@ verify_no_new_old_duplicates(df_new_input, df_existing_output)
 
 # get info for new input to output
 
-df_new_input['Pinyin'] = df_new_input.apply(lambda row: pinyin_from_hanzi(row), axis=1)
+df_new_input['Pinyin'] = df_new_input.apply(lambda row: pinyin_from_hanzi_googletrans(row), axis=1)
 df_new_input['Hanzi'] = df_new_input.apply(lambda row: hanzi_with_spaces(row), axis=1)
 
 df_merged = pd.concat([df_existing_output, df_new_input], ignore_index=True)
