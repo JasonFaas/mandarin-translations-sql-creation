@@ -1,16 +1,15 @@
 Hanzi,English,Difficulty,Pinyin
 你好,Hello,1,nǐ hǎo
-谢谢,Thank you,1,xièxiè
-没 问题,No Problem,1,méi wèntí
-对不起,I'm sorry,1,duìbùqǐ
-我 不 知道,I do not know,1,wǒ bù zhīdào
-我 不 明白,I do not understand,1,wǒ bù míngbái
-可 再说 一遍 吗,Can you say it again?,1,kě zàishuō yībiàn ma
-等 一下,Just a moment,1,děng yīxià
-不 客气,You are welcome,1,bù kèqì
-多少 钱,How much does it cost?,1,duōshǎo qián
+谢谢,Thank you,2,xièxiè
+没 问题,No Problem,3,méi wèntí
+对不起,I'm sorry,4,duìbùqǐ
+我 不 知道,I do not know,5,wǒ bù zhīdào
+我 不 明白,I do not understand,6,wǒ bù míngbái
+可 再说 一遍 吗,Can you say it again?,7,kě zàishuō yībiàn ma
+等 一下,Just a moment,8,děng yīxià
+不 客气,You are welcome,9,bù kèqì
+多少 钱,How much does it cost?,10,duōshǎo qián
 我 是 美国 人,I am an American,11,wǒ shì měiguó rén
-我 今年 三十二岁,I am 32 years old,15,wǒ jīnnián sānshí'èr suì
 你 住 在 哪里,Where do you live?,12,nǐ zhù zài nǎlǐ
 生日快乐,Happy Birthday,8,shēngrì kuàilè
 新年快乐,Happy New Year,7,xīnnián kuàilè
@@ -18,3 +17,6 @@ Hanzi,English,Difficulty,Pinyin
 你 叫 什么 名字,What is your name?,5,nǐ jiào shénme míngzì
 可以 请 你 喝一杯 吗,Can I buy you a drink?,44,kěyǐ qǐng nǐ hè yībēi ma
 你 能 帮助 我 吗,Can you help me?,17,nǐ néng bāngzhù wǒ ma
+你 是 中国 人,You are Chinese,33,nǐ shì zhōngguó rén
+她 是 俄国人,You are Russian,55,tā shì éguó rén
+我 今年 { number : 21 - 41 } 岁,I am {number:21-41} years old,15,wǒ jīnnián {number:21-41} suì

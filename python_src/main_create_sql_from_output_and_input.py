@@ -32,7 +32,7 @@ def pinyin_from_hanzi(row):
     return pinyin_final.strip()
 
 def hanzi_with_spaces(row):
-    nh2 = row['Hanzi']
+    nh2 = row['Hanzi'].replace(' ', '')
 
     seg_list = jieba.cut(nh2)
     what = " ".join(seg_list)
@@ -44,7 +44,7 @@ googletrans_translator = Translator()
 def pinyin_from_hanzi_googletrans(row):
     global googletrans_translator
 
-    hanzi = row['Hanzi']
+    hanzi = row['Hanzi'].replace(' ', '')
     gt_translation = googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
     print(gt_translation, flush=True)
     print(gt_translation.extra_data, flush=True)
