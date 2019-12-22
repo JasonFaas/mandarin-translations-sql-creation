@@ -1,3 +1,0 @@
-Hanzi,English,Difficulty,Pinyin
-你是 {1: country.person_name },You are {1: country.person_name },33
-我最喜欢{1: select * from food_type ORDER BY RANDOM() LIMIT 1: 1.name}是{3: select * from food where food.food_type_fk == 1.id ORDER BY RANDOM() LIMIT 1},My favorite {1: select * from food_type ORDER BY RANDOM() LIMIT 1: 1.name} is {3: select * from food where food.food_type_fk == 1.id ORDER BY RANDOM() LIMIT 1},22
