@@ -72,6 +72,8 @@ columns = (
 output_file_names = os.listdir(output_path)
 output_file_names.sort()
 
+db_in_mem = {}
+
 for filename in output_file_names:
     print('')
     table_name = filename[filename.index('_') + 1:filename.index('.')]
@@ -90,18 +92,29 @@ for filename in output_file_names:
                 i[('%s' % columns[4])],
             )
             for i in dr]
+
+    if table_name != 'translations':
+        db_in_mem[table_name] = {}
+        for idx, row in enumerate(to_db):
+            db_in_mem[table_name][row[2]] = idx
+
     fk_parent = to_db[0][0]
-    if fk_parent == "" or fk_parent == '-1':
+    no_fk_ref = fk_parent == "" or fk_parent == '-1'
+    if no_fk_ref:
         print('no foreign key')
-        table_contents_fk_dec = ''
+        table_contents_fk_dec = '[{}] INTEGER,'.format(columns[0])
         table_contents_fk_ref = ''
+        for idx in range(len(to_db)):
+            to_db[idx] = (-1,) + to_db[idx][1:]
     else:
         foreign_key_table_name = fk_parent[0:fk_parent.index('.')]
         print('foreign key is:{}'.format(foreign_key_table_name))
-        fk_column_name = 'fk_{}'.format(foreign_key_table_name)
-        table_contents_fk_dec = '[{}] INTEGER,'.format(fk_column_name)
-        table_contents_fk_ref = ',FOREIGN KEY({}) REFERENCES {}(id)'.format(fk_column_name, foreign_key_table_name)
-    print(to_db[0][2])
+        table_contents_fk_dec = '[{}] INTEGER,'.format(columns[0])
+        table_contents_fk_ref = ',FOREIGN KEY({}) REFERENCES {}(id)'.format(columns[0], foreign_key_table_name)
+        print(db_in_mem)
+        for idx in range(len(to_db)):
+            ref_split = str(to_db[idx][0]).split('.')
+            to_db[idx] = (db_in_mem[ref_split[0]][ref_split[1]],) + to_db[idx][1:]
 
     table_contents = '({}{}{}{}{}{}{})'.format(
         '[id] INTEGER PRIMARY KEY,',
@@ -113,17 +126,18 @@ for filename in output_file_names:
         table_contents_fk_ref
     )
     contents = '''CREATE TABLE ''' + table_name + ''' ''' + table_contents
+    print(contents)
     cur.execute(contents)
 
+    percent_s = ", ".join(['%s'] * len(columns))
+    question_mark = ", ".join(['?'] * len(columns))
+    insert_str = ("INSERT INTO " + table_name + " (" + percent_s + ") VALUES (" + question_mark + ");")
+
+
+    cur.executemany(insert_str % columns, to_db)
 
 con.commit()
 con.close()
 
 exit(66)
 
-percent_s = ", ".join(['%s'] * len(columns))
-question_mark = ", ".join(['?'] * len(columns))
-insert_str = ("INSERT INTO " + table_name + " (" + percent_s + ") VALUES (" + question_mark + ");")
-cur.executemany(insert_str % columns, to_db)
-con.commit()
-con.close()
