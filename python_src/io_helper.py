@@ -4,7 +4,7 @@ import pinyin
 from googletrans import Translator
 
 
-class Helper(object):
+class IoHelper(object):
 
     def __init__(self):
         self.googletrans_translator = Translator()
