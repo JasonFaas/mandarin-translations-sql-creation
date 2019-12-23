@@ -24,6 +24,7 @@ input_file_names = os.listdir(input_path)
 input_file_names.sort()
 
 for filename in input_file_names:
+    print(filename)
     input_csv_filename = '{}{}'.format(input_path, filename)
     output_csv_filename = '{}{}'.format(output_path, filename)
 
@@ -32,7 +33,7 @@ for filename in input_file_names:
     if os.path.isfile(output_csv_filename):
         df_existing_output = pd.read_csv(output_csv_filename)
     else:
-        df_existing_output = pd.read_csv()
+        df_existing_output = pd.read_csv(empty_csv)
 
     # verify no new input conflicts
     helper.verify_no_new_old_duplicates(df_new_input, df_existing_output)
@@ -61,9 +62,9 @@ con = sqlite3.connect(database_name)
 cur = con.cursor()
 columns = (
     '''fk''',
-    '''Hanzi''',
-    '''English''',
     '''Difficulty''',
+    '''English''',
+    '''Hanzi''',
     '''Pinyin'''
 )
 cur.execute('''CREATE TABLE Translations
