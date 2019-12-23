@@ -12,7 +12,6 @@ print(sys.version)
 
 # TODO: Delete verification of helper file
 ioHelper = IoHelper()
-print(ioHelper.other_file('Verification of Helper File'))
 
 data_location = '../data_raw'
 empty_csv = '{}/empty.csv'.format(data_location)
@@ -24,7 +23,6 @@ input_file_names = os.listdir(input_path)
 input_file_names.sort()
 
 for filename in input_file_names:
-    print(filename)
     input_csv_filename = '{}{}'.format(input_path, filename)
     output_csv_filename = '{}{}'.format(output_path, filename)
 
@@ -43,7 +41,6 @@ for filename in input_file_names:
     df_new_input['Hanzi'] = df_new_input.apply(lambda row: ioHelper.hanzi_with_spaces(row), axis=1)
 
     df_merged = pd.concat([df_existing_output, df_new_input], ignore_index=True)
-    print(df_merged)
 
     # update output file
     df_merged.to_csv(output_csv_filename, index=False)
@@ -51,6 +48,8 @@ for filename in input_file_names:
     # remove all data from input file
     df_empty = df_new_input[0:0]
     df_empty.to_csv(input_csv_filename, index=False)
+
+    os.remove(input_csv_filename)
 
 # TODO: Make ioHelper above and sqlCreation below different functions
 
@@ -75,9 +74,7 @@ output_file_names.sort()
 db_in_mem = {}
 
 for filename in output_file_names:
-    print('')
     table_name = filename[filename.index('_') + 1:filename.index('.')]
-    print(table_name)
 
     output_csv_filename = '{}{}'.format(output_path, filename)
     with open(output_csv_filename, 'rt') as fin:  # `with` statement available in 2.5+
@@ -101,17 +98,14 @@ for filename in output_file_names:
     fk_parent = to_db[0][0]
     no_fk_ref = fk_parent == "" or fk_parent == '-1'
     if no_fk_ref:
-        print('no foreign key')
         table_contents_fk_dec = '[{}] INTEGER,'.format(columns[0])
         table_contents_fk_ref = ''
         for idx in range(len(to_db)):
             to_db[idx] = (-1,) + to_db[idx][1:]
     else:
         foreign_key_table_name = fk_parent[0:fk_parent.index('.')]
-        print('foreign key is:{}'.format(foreign_key_table_name))
         table_contents_fk_dec = '[{}] INTEGER,'.format(columns[0])
         table_contents_fk_ref = ',FOREIGN KEY({}) REFERENCES {}(id)'.format(columns[0], foreign_key_table_name)
-        print(db_in_mem)
         for idx in range(len(to_db)):
             ref_split = str(to_db[idx][0]).split('.')
             to_db[idx] = (db_in_mem[ref_split[0]][ref_split[1]],) + to_db[idx][1:]
@@ -126,7 +120,6 @@ for filename in output_file_names:
         table_contents_fk_ref
     )
     contents = '''CREATE TABLE ''' + table_name + ''' ''' + table_contents
-    print(contents)
     cur.execute(contents)
 
     percent_s = ", ".join(['%s'] * len(columns))

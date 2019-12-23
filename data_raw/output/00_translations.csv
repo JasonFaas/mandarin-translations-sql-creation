@@ -19,6 +19,5 @@ fk_parent,Difficulty,English,Hanzi,Pinyin
 ,17,Can you help me?,你 能 帮助 我 吗,nǐ néng bāngzhù wǒ ma
 ,33,You are Chinese,你 是 中国 人,nǐ shì zhōngguó rén
 ,55,You are Russian,她 是 俄国人,tā shì éguó rén
-,15,I am {number:21-41} years old,我 今年 { number : 21 - 41 } 岁,wǒ jīnnián {number:21-41} suì
-,33,You are {1: country.person_name },你 是 { 1 : country . person _ name },nǐ shì {1:country.person_name}
-,22,My favorite {1: select * from food_type ORDER BY RANDOM() LIMIT 1: 1.name} is {3: select * from food where food.food_type_fk == 1.id ORDER BY RANDOM() LIMIT 1},我 最 喜欢 { 1 : select * fromfood _ typeORDERBYRANDOM ( ) LIMIT1 : 1 . name } 是 { 3 : select * fromfoodwherefood . food _ type _ fk = = 1 . idORDERBYRANDOM ( ) LIMIT1 },wǒ zuì xǐhuān {1:select*fromfood_typeorderbyrandom()limit1:1.name} shì {3:select*fromfoodwherefood.food_type_fk==1.idorderbyrandom()limit1}
+,5,I am {1:number:21-41} years old,我 今年 {1:number:21-41} 岁,wǒ jīnnián {1:number:21-41} suì
+,33,You are {1:country.person_name},你 是 {1:country.person_name},nǐ shì {1:country.person_name}

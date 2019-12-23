@@ -9,9 +9,6 @@ class IoHelper(object):
     def __init__(self):
         self.googletrans_translator = Translator()
 
-    def other_file(self, import_str):
-        return '{} World'.format(import_str)
-
     def pinyin_from_hanzi(self, row):
         nh2 = row['Hanzi']
 
@@ -36,18 +33,28 @@ class IoHelper(object):
         nh2 = row['Hanzi'].replace(' ', '')
 
         seg_list = jieba.cut(nh2)
-        what = " ".join(seg_list)
-        return what
+        with_spaces = ''
+        inside_bracket = False
+        for piece in seg_list:
+            with_spaces += piece
+            if piece == '{':
+                inside_bracket = True
+            if piece == '}':
+                inside_bracket = False
+
+            if not inside_bracket:
+                with_spaces += ' '
+        return with_spaces.strip()
 
     def pinyin_from_hanzi_googletrans(self, row):
         hanzi = row['Hanzi'].replace(' ', '')
         gt_translation = self.googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
-        print(gt_translation, flush=True)
-        print(gt_translation.extra_data, flush=True)
+        # print(gt_translation, flush=True)
+        # print(gt_translation.extra_data, flush=True)
         # print(gt_translation.origin, ' -> ', gt_translation.text, flush=True)
         translation_return = gt_translation.extra_data['translation'][1][-1].lower()
-        print(gt_translation.origin, ' -> ', translation_return)
-        print('\n', flush=True)
+        # print(gt_translation.origin, ' -> ', translation_return)
+        # print('\n', flush=True)
 
         return translation_return
 
