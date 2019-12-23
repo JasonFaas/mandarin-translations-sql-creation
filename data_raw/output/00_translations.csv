@@ -19,5 +19,6 @@ fk_parent,Difficulty,English,Hanzi,Pinyin
 ,17,Can you help me?,你 能 帮助 我 吗,nǐ néng bāngzhù wǒ ma
 ,33,You are Chinese,你 是 中国 人,nǐ shì zhōngguó rén
 ,55,You are Russian,她 是 俄国人,tā shì éguó rén
-,5,I am {1:number:21-41} years old,我 今年 {1:number:21-41} 岁,wǒ jīnnián {1:number:21-41} suì
-,33,You are {1:country.person_name},你 是 {1:country.person_name},nǐ shì {1:country.person_name}
+,2,I am {1:number:21-41} years old,我 今年 {1:number:21-41} 岁,wǒ jīnnián {1:number:21-41} suì
+,3,You are {1:country_person_name},你 是 {1:country_person_name},nǐ shì {1:country_person_name}
+,3,My favorite {1:food_type} is {3:food:1},我 最 喜欢 {1:food_type} 是 {3:food:1},wǒ zuì xǐhuān {1:food_type} shì {3:food:1}
