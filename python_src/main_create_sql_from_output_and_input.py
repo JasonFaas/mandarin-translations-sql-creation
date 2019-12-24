@@ -108,7 +108,7 @@ for filename in output_file_names:
         table_contents_fk_ref = ',FOREIGN KEY({}) REFERENCES {}(id)'.format(columns[0], foreign_key_table_name)
         for idx in range(len(to_db)):
             ref_split = str(to_db[idx][0]).split('.')
-            to_db[idx] = (db_in_mem[ref_split[0]][ref_split[1]],) + to_db[idx][1:]
+            to_db[idx] = (db_in_mem[ref_split[0]][ref_split[1]] + 1,) + to_db[idx][1:]
 
     table_contents = '({}{}{}{}{}{}{})'.format(
         '[id] INTEGER PRIMARY KEY,',
