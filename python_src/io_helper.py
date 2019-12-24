@@ -3,6 +3,8 @@ import pinyin
 
 from googletrans import Translator
 
+import random
+
 
 class IoHelper(object):
 
@@ -28,6 +30,12 @@ class IoHelper(object):
             pinyin_itr += len(hanzi_group)
 
         return pinyin_final.strip()
+
+    def auto_level(self, row):
+        nh2 = row['Hanzi'].replace(' ', '')
+        print(nh2)
+
+        return random.randint(1, 99)
 
     def hanzi_with_spaces(self, row):
         nh2 = row['Hanzi'].replace(' ', '')

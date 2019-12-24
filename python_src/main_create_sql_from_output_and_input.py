@@ -10,6 +10,15 @@ from python_src.io_helper import IoHelper
 
 print(sys.version)
 
+columns = (
+    '''fk_parent''',
+    '''Manual_Level''',
+    '''Auto_Level''',
+    '''English''',
+    '''Hanzi''',
+    '''Pinyin''',
+)
+
 # TODO: Delete verification of helper file
 ioHelper = IoHelper()
 
@@ -37,13 +46,14 @@ for filename in input_file_names:
     ioHelper.verify_no_new_old_duplicates(df_new_input, df_existing_output)
 
     # get info for new input to output
-    df_new_input['Pinyin'] = df_new_input.apply(lambda row: ioHelper.pinyin_from_hanzi_googletrans(row), axis=1)
-    df_new_input['Hanzi'] = df_new_input.apply(lambda row: ioHelper.hanzi_with_spaces(row), axis=1)
+    df_new_input[columns[5]] = df_new_input.apply(lambda row: ioHelper.pinyin_from_hanzi_googletrans(row), axis=1)
+    df_new_input[columns[4]] = df_new_input.apply(lambda row: ioHelper.hanzi_with_spaces(row), axis=1)
+    df_new_input[columns[2]] = df_new_input.apply(lambda row: ioHelper.auto_level(row), axis=1)
 
-    df_merged = pd.concat([df_existing_output, df_new_input], ignore_index=True)
+    df_merged = pd.concat([df_existing_output, df_new_input], ignore_index=True, sort=False)
 
     # update output file
-    df_merged.to_csv(output_csv_filename, index=False)
+    df_merged.to_csv(output_csv_filename, index=False, header=True, columns=columns)
 
     # remove all data from input file
     df_empty = df_new_input[0:0]
@@ -60,13 +70,6 @@ os.remove(database_name)
 
 con = sqlite3.connect(database_name)
 cur = con.cursor()
-columns = (
-    '''fk_parent''',
-    '''Difficulty''',
-    '''English''',
-    '''Hanzi''',
-    '''Pinyin''',
-)
 
 output_file_names = os.listdir(output_path)
 output_file_names.sort()
@@ -87,13 +90,15 @@ for filename in output_file_names:
                 i[('%s' % columns[2])],
                 i[('%s' % columns[3])],
                 i[('%s' % columns[4])],
+                i[('%s' % columns[5])],
             )
             for i in dr]
 
     if table_name != 'translations':
         db_in_mem[table_name] = {}
         for idx, row in enumerate(to_db):
-            db_in_mem[table_name][row[2]] = idx
+            english_value = row[3]
+            db_in_mem[table_name][english_value] = idx
 
     fk_parent = to_db[0][0]
     no_fk_ref = fk_parent == "" or fk_parent == '-1'
@@ -114,9 +119,10 @@ for filename in output_file_names:
         '[id] INTEGER PRIMARY KEY,',
         table_contents_fk_dec,
         '[{}] INTEGER,'.format(columns[1]),
-        '[{}] text,'.format(columns[2]),
+        '[{}] INTEGER,'.format(columns[2]),
         '[{}] text,'.format(columns[3]),
-        '[{}] text'.format(columns[4]),
+        '[{}] text,'.format(columns[4]),
+        '[{}] text'.format(columns[5]),
         table_contents_fk_ref
     )
     contents = '''CREATE TABLE ''' + table_name + ''' ''' + table_contents
@@ -131,6 +137,3 @@ for filename in output_file_names:
 
 con.commit()
 con.close()
-
-exit(66)
-

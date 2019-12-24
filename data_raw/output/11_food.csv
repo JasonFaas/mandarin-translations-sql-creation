@@ -1,6 +1,6 @@
-fk_parent,Difficulty,English,Hanzi,Pinyin
-food_type.vegetable,8,tomato,西红柿,xīhóngshì
-food_type.vegetable,33,corn,玉米,yùmǐ
-food_type.fruit,6,apple,苹果,píngguǒ
-food_type.fruit,22,banana,香蕉,xiāngjiāo
-food_type.fruit,33,dragon fruit,火龙果,huǒlóng guǒ
+fk_parent,Manual_Level,Auto_Level,English,Hanzi,Pinyin
+food_type.vegetable,8.0,88.0,tomato,西红柿,xīhóngshì
+food_type.vegetable,33.0,30.0,corn,玉米,yùmǐ
+food_type.fruit,6.0,59.0,apple,苹果,píngguǒ
+food_type.fruit,22.0,11.0,banana,香蕉,xiāngjiāo
+food_type.fruit,33.0,38.0,dragon fruit,火龙果,huǒlóng guǒ
