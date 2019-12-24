@@ -65,7 +65,7 @@ columns = (
     '''Difficulty''',
     '''English''',
     '''Hanzi''',
-    '''Pinyin'''
+    '''Pinyin''',
 )
 
 output_file_names = os.listdir(output_path)
