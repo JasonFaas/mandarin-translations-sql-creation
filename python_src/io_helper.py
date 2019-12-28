@@ -39,8 +39,6 @@ class IoHelper(object):
         hanzi_with_spaces = str(row['Hanzi'])
         without_spaces = hanzi_with_spaces.replace(' ', '')
 
-        print(self.hsk_word_list.keys())
-
         try:
             hsk_level = self.get_word_hsk_level(without_spaces)
             return hsk_level * 10
@@ -54,9 +52,7 @@ class IoHelper(object):
             open_index = max(hanzi_with_spaces.index('{') - 1, 0)
             close_index = min(hanzi_with_spaces.index('}') + 1, len(hanzi_with_spaces))
             hanzi_with_spaces = hanzi_with_spaces[:open_index] + hanzi_with_spaces[close_index:]
-            print(hanzi_with_spaces)
             hanzi_with_spaces = hanzi_with_spaces.strip()
-            print(hanzi_with_spaces)
 
         word_split = hanzi_with_spaces.split(' ')
         level_list = []
@@ -72,7 +68,11 @@ class IoHelper(object):
                 except Exception as e:
                     level_list.append(10)
 
-        return max(level_list) * (10 - 1) + sum(level_list) + auto_level
+        if len(level_list) > 0:
+            level_list_val = max(level_list) * (10 - 1)
+        else:
+            level_list_val = 1
+        return level_list_val + sum(level_list) + auto_level
 
     def get_word_hsk_level(self, without_spaces):
         for hsk_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
@@ -106,10 +106,15 @@ class IoHelper(object):
     def pinyin_from_hanzi_googletrans(self, row):
         hanzi = row['Hanzi'].replace(' ', '')
         gt_translation = self.googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
-        # print(gt_translation, flush=True)
+        print(gt_translation, flush=True)
         # print(gt_translation.extra_data, flush=True)
         # print(gt_translation.origin, ' -> ', gt_translation.text, flush=True)
-        translation_return = gt_translation.extra_data['translation'][1][-1].lower()
+        translation_ = gt_translation.extra_data['translation']
+        if len(translation_) < 2:
+            return hanzi
+        translation__ = translation_[1]
+        translation___ = translation__[-1]
+        translation_return = translation___.lower()
         # print(gt_translation.origin, ' -> ', translation_return)
         # print('\n', flush=True)
 

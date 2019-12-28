@@ -19,7 +19,6 @@ columns = (
     '''Pinyin''',
 )
 
-# TODO: Delete verification of helper file
 ioHelper = IoHelper()
 ioHelper.prepareAutoLevel()
 ioHelper.runUnitTests()
@@ -34,6 +33,7 @@ input_file_names = os.listdir(input_path)
 input_file_names.sort()
 
 for filename in input_file_names:
+    print('Working with {}'.format(filename))
     input_csv_filename = '{}{}'.format(input_path, filename)
     output_csv_filename = '{}{}'.format(output_path, filename)
 
