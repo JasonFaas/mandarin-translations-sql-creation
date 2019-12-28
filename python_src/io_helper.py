@@ -10,6 +10,8 @@ class IoHelper(object):
 
     def __init__(self):
         self.googletrans_translator = Translator()
+        self.hsk_word_list = {}
+        self.hsk_char_list = {}
 
     def pinyin_from_hanzi(self, row):
         nh2 = row['Hanzi']
@@ -34,6 +36,15 @@ class IoHelper(object):
     def auto_level(self, row):
         nh2 = row['Hanzi'].replace(' ', '')
         print(nh2)
+
+        # TODO: About to put auto here:
+        # If in a hsk_word_list, multiple by 10 and that is the level
+        # Else
+        #   find char_level for each char
+        #   If char level cannot be found, then make it 7
+        #   (Highest_value * 10) + each of other levels
+        #   Max level 99
+
 
         return random.randint(1, 99)
 
@@ -75,3 +86,11 @@ class IoHelper(object):
             print(set_1)
             print(set_2)
             exit(0)
+
+    def prepareAutoLevel(self):
+        for hsk_level in range(1,7):
+            with open('../hsk_list/HSK_{}.txt'.format(hsk_level), mode='r', encoding='utf-8-sig') as fp:
+                content = fp.readlines()
+            content = [x.strip() for x in content]
+            self.hsk_word_list[hsk_level] = content
+            self.hsk_char_list[hsk_level] = ''.join(content)

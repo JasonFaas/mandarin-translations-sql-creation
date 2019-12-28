@@ -21,6 +21,7 @@ columns = (
 
 # TODO: Delete verification of helper file
 ioHelper = IoHelper()
+ioHelper.prepareAutoLevel()
 
 data_location = '../data_raw'
 empty_csv = '{}/empty.csv'.format(data_location)
