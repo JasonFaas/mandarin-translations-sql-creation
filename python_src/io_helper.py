@@ -34,19 +34,55 @@ class IoHelper(object):
         return pinyin_final.strip()
 
     def auto_level(self, row):
-        nh2 = row['Hanzi'].replace(' ', '')
-        print(nh2)
+        hanzi_with_spaces = str(row['Hanzi'])
+        without_spaces = hanzi_with_spaces.replace(' ', '')
 
-        # TODO: About to put auto here:
-        # If in a hsk_word_list, multiple by 10 and that is the level
-        # Else
-        #   find char_level for each char
-        #   If char level cannot be found, then make it 7
-        #   (Highest_value * 10) + each of other levels
-        #   Max level 99
+        print(self.hsk_word_list.keys())
+
+        try:
+            hsk_level = self.get_word_hsk_level(without_spaces)
+            return hsk_level * 10
+        except Exception as e:
+            pass
 
 
-        return random.randint(1, 99)
+        auto_level = 0
+        while '{' in hanzi_with_spaces:
+            auto_level += 1
+            open_index = max(hanzi_with_spaces.index('{') - 1, 0)
+            close_index = min(hanzi_with_spaces.index('}') + 1, len(hanzi_with_spaces))
+            hanzi_with_spaces = hanzi_with_spaces[:open_index] + hanzi_with_spaces[close_index:]
+            print(hanzi_with_spaces)
+            hanzi_with_spaces = hanzi_with_spaces.strip()
+            print(hanzi_with_spaces)
+
+        word_split = hanzi_with_spaces.split(' ')
+        level_list = []
+        for word in word_split:
+            try:
+                level = self.get_word_hsk_level(word)
+                level_list.append(level)
+            except Exception as e:
+                try:
+                    for single_char in word:
+                        level = self.get_char_hsk_level(single_char)
+                        level_list.append(level)
+                except Exception as e:
+                    level_list.append(10)
+
+        return max(level_list) * (10 - 1) + sum(level_list) + auto_level
+
+    def get_word_hsk_level(self, without_spaces):
+        for hsk_level in range(1, 7):
+            if without_spaces in self.hsk_word_list[hsk_level]:
+                return hsk_level
+        raise Exception('Word not in HSK list')
+
+    def get_char_hsk_level(self, single_hanzi):
+        for hsk_level in range(1, 7):
+            if single_hanzi in self.hsk_char_list[hsk_level]:
+                return hsk_level
+        raise Exception('Single Char not in HSK list')
 
     def hanzi_with_spaces(self, row):
         nh2 = row['Hanzi'].replace(' ', '')
@@ -94,3 +130,19 @@ class IoHelper(object):
             content = [x.strip() for x in content]
             self.hsk_word_list[hsk_level] = content
             self.hsk_char_list[hsk_level] = ''.join(content)
+
+    def runUnitTests(self):
+
+        self.test_auto_level_phrase_and_expected('爸爸', 10)
+        self.test_auto_level_phrase_and_expected('爸爸 和 妈妈', 10 + 1 + 1)
+        self.test_auto_level_phrase_and_expected('{ref:0;example:exampless} 我 最 喜欢 的 {ref:1;type:food_type} 是 {ref:2;type:food;fk_ref:1}',
+                                                 20 + 1 * 7)
+        self.test_auto_level_phrase_and_expected('你 好', 10 + 1)
+        self.test_auto_level_phrase_and_expected('你好', 10 + 1)
+
+    def test_auto_level_phrase_and_expected(self, phrase, expected_level):
+        auto_level = self.auto_level(self.autoPackage(phrase))
+        assert expected_level == auto_level, auto_level
+
+    def autoPackage(self, phrase):
+        return {'Hanzi': phrase, }
