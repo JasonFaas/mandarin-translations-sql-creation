@@ -5,6 +5,8 @@ from googletrans import Translator
 
 import random
 
+MAX_HSK_LEVEL_PLUS_ONE = 7 + 1
+
 
 class IoHelper(object):
 
@@ -73,13 +75,13 @@ class IoHelper(object):
         return max(level_list) * (10 - 1) + sum(level_list) + auto_level
 
     def get_word_hsk_level(self, without_spaces):
-        for hsk_level in range(1, 7):
+        for hsk_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
             if without_spaces in self.hsk_word_list[hsk_level]:
                 return hsk_level
         raise Exception('Word not in HSK list')
 
     def get_char_hsk_level(self, single_hanzi):
-        for hsk_level in range(1, 7):
+        for hsk_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
             if single_hanzi in self.hsk_char_list[hsk_level]:
                 return hsk_level
         raise Exception('Single Char not in HSK list')
@@ -124,7 +126,7 @@ class IoHelper(object):
             exit(0)
 
     def prepareAutoLevel(self):
-        for hsk_level in range(1,7):
+        for hsk_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
             with open('../hsk_list/HSK_{}.txt'.format(hsk_level), mode='r', encoding='utf-8-sig') as fp:
                 content = fp.readlines()
             content = [x.strip() for x in content]
