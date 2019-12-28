@@ -106,7 +106,7 @@ class IoHelper(object):
     def pinyin_from_hanzi_googletrans(self, row):
         hanzi = row['Hanzi'].replace(' ', '')
         gt_translation = self.googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
-        print(gt_translation, flush=True)
+        # print(gt_translation, flush=True)
         # print(gt_translation.extra_data, flush=True)
         # print(gt_translation.origin, ' -> ', gt_translation.text, flush=True)
         translation_ = gt_translation.extra_data['translation']

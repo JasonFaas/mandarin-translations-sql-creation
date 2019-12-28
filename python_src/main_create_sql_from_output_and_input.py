@@ -78,8 +78,12 @@ output_file_names.sort()
 
 db_in_mem = {}
 
-for filename in output_file_names:
-    table_name = filename[filename.index('_') + 1:filename.index('.')]
+for file_idx, filename in enumerate(output_file_names):
+    is_input_to_primary_table = filename[0] == '0'
+    if is_input_to_primary_table:
+        table_name = 'translations'
+    else:
+        table_name = filename[filename.index('_') + 1:filename.index('.')]
 
     output_csv_filename = '{}{}'.format(output_path, filename)
     with open(output_csv_filename, 'rt') as fin:  # `with` statement available in 2.5+
@@ -96,7 +100,7 @@ for filename in output_file_names:
             )
             for i in dr]
 
-    if table_name != 'translations':
+    if not is_input_to_primary_table:
         db_in_mem[table_name] = {}
         for idx, row in enumerate(to_db):
             english_value = row[3]
@@ -105,35 +109,33 @@ for filename in output_file_names:
     fk_parent = to_db[0][0]
     no_fk_ref = fk_parent == "" or fk_parent == '-1'
     if no_fk_ref:
-        table_contents_fk_dec = '[{}] INTEGER,'.format(columns[0])
         table_contents_fk_ref = ''
         for idx in range(len(to_db)):
             to_db[idx] = (-1,) + to_db[idx][1:]
     else:
         foreign_key_table_name = fk_parent[0:fk_parent.index('.')]
-        table_contents_fk_dec = '[{}] INTEGER,'.format(columns[0])
         table_contents_fk_ref = ',FOREIGN KEY({}) REFERENCES {}(id)'.format(columns[0], foreign_key_table_name)
         for idx in range(len(to_db)):
             ref_split = str(to_db[idx][0]).split('.')
             to_db[idx] = (db_in_mem[ref_split[0]][ref_split[1]] + 1,) + to_db[idx][1:]
 
-    table_contents = '({}{}{}{}{}{}{})'.format(
-        '[id] INTEGER PRIMARY KEY,',
-        table_contents_fk_dec,
-        '[{}] INTEGER,'.format(columns[1]),
-        '[{}] INTEGER,'.format(columns[2]),
-        '[{}] text,'.format(columns[3]),
-        '[{}] text,'.format(columns[4]),
-        '[{}] text'.format(columns[5]),
-        table_contents_fk_ref
-    )
-    contents = '''CREATE TABLE ''' + table_name + ''' ''' + table_contents
-    cur.execute(contents)
+    if file_idx == 0 or not is_input_to_primary_table:
+        table_contents = '({}{}{}{}{}{}{})'.format(
+            '[id] INTEGER PRIMARY KEY,',
+            '[{}] INTEGER,'.format(columns[0]),
+            '[{}] INTEGER,'.format(columns[1]),
+            '[{}] INTEGER,'.format(columns[2]),
+            '[{}] text,'.format(columns[3]),
+            '[{}] text,'.format(columns[4]),
+            '[{}] text'.format(columns[5]),
+            table_contents_fk_ref
+        )
+        contents = '''CREATE TABLE ''' + table_name + ''' ''' + table_contents
+        cur.execute(contents)
 
     percent_s = ", ".join(['%s'] * len(columns))
     question_mark = ", ".join(['?'] * len(columns))
     insert_str = ("INSERT INTO " + table_name + " (" + percent_s + ") VALUES (" + question_mark + ");")
-
 
     cur.executemany(insert_str % columns, to_db)
 
