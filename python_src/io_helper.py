@@ -46,11 +46,11 @@ class IoHelper(object):
 
         try:
             hsk_level = self.get_word_hsk_level(without_spaces)
-            return_level = hsk_level * 10
+            return_level = hsk_level * 3
         except Exception as e:
             auto_level = 0
             while '{' in hanzi_with_spaces:
-                auto_level += 1
+                auto_level += 5
                 open_index = max(hanzi_with_spaces.index('{') - 1, 0)
                 close_index = min(hanzi_with_spaces.index('}') + 1, len(hanzi_with_spaces))
                 hanzi_with_spaces = hanzi_with_spaces[:open_index] + hanzi_with_spaces[close_index:]
@@ -61,20 +61,23 @@ class IoHelper(object):
             for word in word_split:
                 try:
                     level = self.get_word_hsk_level(word)
-                    level_list.append(level)
+                    level_list.append(level * 2)
                 except Exception as e:
                     try:
                         for single_char in word:
                             level = self.get_char_hsk_level(single_char)
-                            level_list.append(level)
+                            level_list.append(level * 4)
                     except Exception as e:
-                        level_list.append(10)
+                        level_list.append(100)
+
+
+            level_list_val = auto_level
 
             if len(level_list) > 0:
-                level_list_val = max(level_list) * (10 - 1)
+                level_list_val += sum(level_list)
             else:
-                level_list_val = 1
-            return_level = level_list_val + sum(level_list) + auto_level
+                level_list_val += 5
+            return_level = level_list_val
         return str(return_level)
 
     def get_word_hsk_level(self, without_spaces):
@@ -148,12 +151,12 @@ class IoHelper(object):
         assert str(10) == self.manual_level({'Manual_Level': '10', })
 
 
-        self.test_auto_level_phrase_and_expected('爸爸', 10)
-        self.test_auto_level_phrase_and_expected('爸爸 和 妈妈', 10 + 1 + 1)
+        self.test_auto_level_phrase_and_expected('爸爸', 1 * 3)
+        self.test_auto_level_phrase_and_expected('爸爸 和 妈妈', (1 + 1 + 1) * 2)
         self.test_auto_level_phrase_and_expected('{ref:0;example:exampless} 我 最 喜欢 的 {ref:1;type:food_type} 是 {ref:2;type:food;fk_ref:1}',
-                                                 20 + 1 * 7)
-        self.test_auto_level_phrase_and_expected('你 好', 10 + 1)
-        self.test_auto_level_phrase_and_expected('你好', 10 + 1)
+                                                 (3 * 5 + ((1 * 4) + 2) * 2))
+        self.test_auto_level_phrase_and_expected('你 好', 2 + 2)
+        self.test_auto_level_phrase_and_expected('你好', 4 + 4)
 
     def test_auto_level_phrase_and_expected(self, phrase, expected_level):
         auto_level = self.auto_level(self.autoPackage(phrase))

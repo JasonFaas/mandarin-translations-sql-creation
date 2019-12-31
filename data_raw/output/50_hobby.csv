@@ -1,17 +1,17 @@
 fk_parent,Manual_Level,Auto_Level,English,Hanzi,Pinyin
--1,8,63,cooking,烹调,pēngtiáo
--1,8,20,dancing,跳舞,tiàowǔ
--1,8,40,reading,阅读,yuèdú
--1,8,22,singing,歌唱,gēchàng
--1,8,10,sleeping,睡觉,shuìjiào
--1,8,20,swimming,游泳,yóuyǒng
--1,8,20,travelling,旅游,lǚyóu
--1,8,40,badminton,羽毛球,yǔmáoqiú
--1,8,42,baseball,棒球,bàngqiú
--1,8,22,basketball,篮球,lánqiú
+-1,8,36,cooking,烹调,pēngtiáo
+-1,8,6,dancing,跳舞,tiàowǔ
+-1,8,12,reading,阅读,yuèdú
+-1,8,16,singing,歌唱,gēchàng
+-1,8,3,sleeping,睡觉,shuìjiào
+-1,8,6,swimming,游泳,yóuyǒng
+-1,8,6,travelling,旅游,lǚyóu
+-1,8,12,badminton,羽毛球,yǔmáoqiú
+-1,8,24,baseball,棒球,bàngqiú
+-1,8,16,basketball,篮球,lánqiú
 -1,8,100,football,橄榄球,gǎnlǎnqiú
--1,8,40,table tennis,乒乓球,pīngpāng qiú
--1,8,40,tennis,网球,wǎngqiú
--1,8,42,volleyball,排球,páiqiú
--1,8,45,golf,高尔夫球,gāo'ěrfū qiú
--1,8,30,music,音乐,yīnyuè
+-1,8,12,table tennis,乒乓球,pīngpāng qiú
+-1,8,12,tennis,网球,wǎngqiú
+-1,8,24,volleyball,排球,páiqiú
+-1,8,36,golf,高尔夫球,gāo'ěrfū qiú
+-1,8,9,music,音乐,yīnyuè
