@@ -1,8 +1,8 @@
 fk_parent,Manual_Level,Auto_Level,English,Hanzi,Pinyin
--1,8.0,10.0,I,我,wǒ
--1,6.0,10.0,You,你,nǐ
--1,6.0,10.0,He ,他,tā
--1,6.0,10.0,She,她,tā
--1,6.0,10.0,We,我们,wǒmen
--1,6.0,11.0,You all,你们,nǐmen
--1,6.0,11.0,They,他们,tāmen
+-1,8,10,I,我,wǒ
+-1,6,10,You,你,nǐ
+-1,6,10,He ,他,tā
+-1,6,10,She,她,tā
+-1,6,10,We,我们,wǒmen
+-1,6,11,You all,你们,nǐmen
+-1,6,11,They,他们,tāmen

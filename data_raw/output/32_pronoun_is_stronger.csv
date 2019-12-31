@@ -1,8 +1,8 @@
 fk_parent,Manual_Level,Auto_Level,English,Hanzi,Pinyin
-pronoun.I,8.0,10.0,am,很,hěn
-pronoun.You,8.0,10.0,are,很,hěn
-pronoun.He ,8.0,10.0,is,很,hěn
-pronoun.She,8.0,10.0,is,很,hěn
-pronoun.We,8.0,10.0,are,很,hěn
-pronoun.You all,8.0,10.0,are,很,hěn
-pronoun.They,8.0,10.0,are,很,hěn
+pronoun.I,8,10,am,很,hěn
+pronoun.You,8,10,are,很,hěn
+pronoun.He ,8,10,is,很,hěn
+pronoun.She,8,10,is,很,hěn
+pronoun.We,8,10,are,很,hěn
+pronoun.You all,8,10,are,很,hěn
+pronoun.They,8,10,are,很,hěn
