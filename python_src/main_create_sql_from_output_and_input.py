@@ -38,7 +38,7 @@ for filename in input_file_names:
     output_csv_filename = '{}{}'.format(output_path, filename)
 
     # read in known output
-    df_new_input = pd.read_csv(input_csv_filename)
+    df_new_input = pd.read_csv(input_csv_filename, dtype=str)
     if os.path.isfile(output_csv_filename):
         df_existing_output = pd.read_csv(output_csv_filename)
     else:
