@@ -14,10 +14,18 @@ columns = (
     '''fk_parent''',
     '''Manual_Level''',
     '''Auto_Level''',
+    '''Blanks''',
     '''English''',
     '''Hanzi''',
     '''Pinyin''',
 )
+fk_parent_row = 0
+manual_level_row = 1
+auto_level_row = 2
+blanks_row = 3
+english_row = 4
+hanzi_row = 5
+pinyin_row = 6
 
 ioHelper = IoHelper()
 ioHelper.prepareAutoLevel()
@@ -48,10 +56,10 @@ for filename in input_file_names:
     ioHelper.verify_no_new_old_duplicates(df_new_input, df_existing_output)
 
     # get info for new input to output
-    df_new_input[columns[5]] = df_new_input.apply(lambda row: ioHelper.pinyin_from_hanzi_googletrans(row), axis=1)
-    df_new_input[columns[4]] = df_new_input.apply(lambda row: ioHelper.hanzi_with_spaces(row), axis=1)
-    df_new_input[columns[2]] = df_new_input.apply(lambda row: ioHelper.auto_level(row), axis=1)
-    df_new_input[columns[1]] = df_new_input.apply(lambda row: ioHelper.manual_level(row), axis=1)
+    df_new_input[columns[pinyin_row]] = df_new_input.apply(lambda row: ioHelper.pinyin_from_hanzi_googletrans(row), axis=1)
+    df_new_input[columns[hanzi_row]] = df_new_input.apply(lambda row: ioHelper.hanzi_with_spaces(row), axis=1)
+    df_new_input[columns[auto_level_row]] = df_new_input.apply(lambda row: ioHelper.auto_level(row), axis=1)
+    df_new_input[columns[manual_level_row]] = df_new_input.apply(lambda row: ioHelper.manual_level(row), axis=1)
 
     df_merged = pd.concat([df_existing_output, df_new_input], ignore_index=True, sort=False)
 
@@ -98,13 +106,14 @@ for file_idx, filename in enumerate(output_file_names):
                 i[('%s' % columns[3])],
                 i[('%s' % columns[4])],
                 i[('%s' % columns[5])],
+                i[('%s' % columns[6])],
             )
             for i in dr]
 
     if not is_input_to_primary_table:
         db_in_mem[table_name] = {}
         for idx, row in enumerate(to_db):
-            english_value = row[3]
+            english_value = row[english_row]
             db_in_mem[table_name][english_value] = idx
 
     fk_parent = to_db[0][0]
@@ -121,17 +130,20 @@ for file_idx, filename in enumerate(output_file_names):
             to_db[idx] = (db_in_mem[ref_split[0]][ref_split[1]] + 1,) + to_db[idx][1:]
 
     if file_idx == 0 or not is_input_to_primary_table:
-        table_contents = '({}{}{}{}{}{}{})'.format(
-            '[id] INTEGER PRIMARY KEY,',
-            '[{}] INTEGER,'.format(columns[0]),
-            '[{}] INTEGER,'.format(columns[1]),
-            '[{}] INTEGER,'.format(columns[2]),
-            '[{}] text,'.format(columns[3]),
-            '[{}] text,'.format(columns[4]),
-            '[{}] text'.format(columns[5]),
-            table_contents_fk_ref
-        )
-        contents = '''CREATE TABLE ''' + table_name + ''' ''' + table_contents
+
+        table_cont_new = '('
+        table_cont_new += '[id] INTEGER PRIMARY KEY,'
+        for col in columns[:3]:
+            table_cont_new += '[{}] INTEGER,'.format(col)
+        for col in columns[3:-1]:
+            table_cont_new += '[{}] text,'.format(col)
+        for col in columns[-1:]:
+            table_cont_new += '[{}] text'.format(col)
+        table_cont_new += table_contents_fk_ref
+        table_cont_new += ')'
+
+        contents = '''CREATE TABLE ''' + table_name + ''' ''' + table_cont_new
+        print(contents)
         cur.execute(contents)
 
     percent_s = ", ".join(['%s'] * len(columns))

@@ -1,8 +1,8 @@
-fk_parent,Manual_Level,Auto_Level,English,Hanzi,Pinyin
-pronoun.I,8,3,am,是,shì
-pronoun.You,8,3,are,是,shì
-pronoun.He,8,3,is,是,shì
-pronoun.She,8,3,is,是,shì
-pronoun.We,8,3,are,是,shì
-pronoun.You all,8,3,are,是,shì
-pronoun.They,8,3,are,是,shì
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
+pronoun.I,8,3,,am,是,shì
+pronoun.You,8,3,,are,是,shì
+pronoun.He,8,3,,is,是,shì
+pronoun.She,8,3,,is,是,shì
+pronoun.We,8,3,,are,是,shì
+pronoun.You all,8,3,,are,是,shì
+pronoun.They,8,3,,are,是,shì

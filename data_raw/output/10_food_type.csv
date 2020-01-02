@@ -1,3 +1,3 @@
-fk_parent,Manual_Level,Auto_Level,English,Hanzi,Pinyin
--1,5,15,vegetable,蔬菜,shūcài
--1,6,3,fruit,水果,shuǐguǒ
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
+-1,5,15,,vegetable,蔬菜,shūcài
+-1,6,3,,fruit,水果,shuǐguǒ

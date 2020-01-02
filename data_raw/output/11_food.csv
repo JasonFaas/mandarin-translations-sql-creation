@@ -1,18 +1,18 @@
-fk_parent,Manual_Level,Auto_Level,English,Hanzi,Pinyin
-food_type.vegetable,8,12,tomato,西红柿,xīhóngshì
-food_type.vegetable,33,15,corn,玉米,yùmǐ
-food_type.fruit,6,3,apple,苹果,píngguǒ
-food_type.fruit,22,9,banana,香蕉,xiāngjiāo
-food_type.fruit,33,32,dragon fruit,火龙果,huǒlóng guǒ
-food_type.fruit,33,36,blackberry,黑莓,hēiméi
-food_type.fruit,33,40,blueberry,蓝莓,lánméi
-food_type.fruit,33,21,cherry,樱桃,yīngtáo
-food_type.fruit,33,12,grape,葡萄,pútáo
-food_type.fruit,33,21,lemon,柠檬,níngméng
-food_type.fruit,33,28,mango,芒果,mángguǒ
-food_type.fruit,33,28,orange,橙子,chéngzi
-food_type.fruit,33,15,peach,桃,táo
-food_type.fruit,33,12,pear,李,lǐ
-food_type.fruit,33,21,pineapple,菠萝,bōluó
-food_type.fruit,33,40,strawberry,草莓,cǎoméi
-food_type.fruit,33,6,watermellon,西瓜,xīguā
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
+food_type.vegetable,8,12,,tomato,西红柿,xīhóngshì
+food_type.vegetable,33,15,,corn,玉米,yùmǐ
+food_type.fruit,6,3,,apple,苹果,píngguǒ
+food_type.fruit,22,9,,banana,香蕉,xiāngjiāo
+food_type.fruit,33,32,,dragon fruit,火龙果,huǒlóng guǒ
+food_type.fruit,33,36,,blackberry,黑莓,hēiméi
+food_type.fruit,33,40,,blueberry,蓝莓,lánméi
+food_type.fruit,33,21,,cherry,樱桃,yīngtáo
+food_type.fruit,33,12,,grape,葡萄,pútáo
+food_type.fruit,33,21,,lemon,柠檬,níngméng
+food_type.fruit,33,28,,mango,芒果,mángguǒ
+food_type.fruit,33,28,,orange,橙子,chéngzi
+food_type.fruit,33,15,,peach,桃,táo
+food_type.fruit,33,12,,pear,李,lǐ
+food_type.fruit,33,21,,pineapple,菠萝,bōluó
+food_type.fruit,33,40,,strawberry,草莓,cǎoméi
+food_type.fruit,33,6,,watermellon,西瓜,xīguā
