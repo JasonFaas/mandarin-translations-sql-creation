@@ -36,7 +36,6 @@ empty_csv = '{}/empty.csv'.format(data_location)
 input_path = '{}/input/'.format(data_location)
 output_path = '{}/output/'.format(data_location)
 
-# print list of files in input
 input_file_names = os.listdir(input_path)
 input_file_names.sort()
 
@@ -143,7 +142,6 @@ for file_idx, filename in enumerate(output_file_names):
         table_cont_new += ')'
 
         contents = '''CREATE TABLE ''' + table_name + ''' ''' + table_cont_new
-        print(contents)
         cur.execute(contents)
 
     percent_s = ", ".join(['%s'] * len(columns))
