@@ -13,3 +13,4 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
 -1,2,20,{ref:2;type:pronoun} {ref:3;type:pronoun_is_stronger;fk_ref:2} {ref:1;type:simple_adjectives},{ref:2} {ref:3} {ref:1},{ref:2} {ref:3} {ref:1},{ref:2}{ref:3}{ref:1}
 -1,3,25,{ref:1;type:hobby},Is {ref:1} difficult,{ref:1} 容 不 容易,{ref:1} róng bù róngyì
 -1,3,19,{ref:1;type:country_name}{ref:2;type:country_name;ref_not:1}{ref:5;type:eval;left:3;right:4;sign:>;true:comparison_adjectives.bigger;false:comparison_adjectives.smaller} {ref:3;type:country_size_km2;fk_ref:1} {ref:4;type:country_size_km2;fk_ref:2},{ref:1} is {ref:5} than {ref:2},{ref:1} 比 {ref:2} {ref:5},{ref:1} bǐ {ref:2} {ref:5}
+-1,17,26,{ref:1;type:continents;specific:Asia}{ref:2;type:continents;ref_not:1},I have only been to {ref:1} and {ref:2},我 只 去过 {ref:1} 和 {ref:2},wǒ zhǐ qùguò {ref:1} hé {ref:2}
