@@ -42,6 +42,10 @@ class IoHelper(object):
         return_level = 100
 
         hanzi_with_spaces = str(row['Hanzi'])
+        if ',' in hanzi_with_spaces:
+            raise Exception(":{}: has an invalid character".format(hanzi_with_spaces))
+        for char_to_remove in ['.', '。', '？', '?']:
+            hanzi_with_spaces = hanzi_with_spaces.replace(char_to_remove, '')
         without_spaces = hanzi_with_spaces.replace(' ', '')
 
         try:
