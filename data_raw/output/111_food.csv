@@ -15,4 +15,26 @@ food_type.fruit,33,15,,peach,桃,táo
 food_type.fruit,33,12,,pear,李,lǐ
 food_type.fruit,33,21,,pineapple,菠萝,bōluó
 food_type.fruit,33,40,,strawberry,草莓,cǎoméi
-food_type.fruit,33,6,,watermellon,西瓜,xīguā
+food_type.fruit,33,6,,watermelon,西瓜,xīguā
+food_type.vegetable,8,15,,potato,土豆,tǔdòu
+food_type.vegetable,8,104,,ginger,生姜,shēngjiāng
+food_type.vegetable,8,104,,garlic,大蒜,dàsuàn
+food_type.vegetable,8,104,,broccoli,西兰花,xī lánhuā
+food_type.vegetable,8,20,,cucumber,黄瓜,huángguā
+food_type.vegetable,8,100,,mushroom,蘑菇,mógū
+food_type.vegetable,8,18,,green pepper,请教,qǐngjiào
+food_type.vegetable,8,18,,green pepper,请教,qǐngjiào
+food_type.vegetable,8,128,,radish,萝卜,luóbo
+food_type.vegetable,8,12,,cabbage,白菜,báicài
+food_type.vegetable,8,32,,spinach,菠菜,bōcài
+food_type.vegetable,8,20,,pumpkin,南瓜,nánguā
+food_type.meat,8,48,,chicken wing,鸡翅膀,jī chìbǎng
+food_type.meat,8,8,,hot dog,热狗,règǒu
+food_type.fruit,33,28,,avocado,牛油果,niúyóuguǒ
+food_type.flour food,33,6,,noodles,面条,miàntiáo
+food_type.flour food,33,12,,dumplings,饺子,jiǎozi
+food_type.flour food,33,12,,stuffed buns,包子,bāozi
+food_type.flour food,33,15,,steamed bread,馒头,mántou
+food_type.flour food,33,28,,sesame seed cake,烧饼,shāobǐng
+food_type.flour food,33,24,,fried bread steak,油条,yóutiáo
+food_type.flour food,33,9,,cake,蛋糕,dàngāo

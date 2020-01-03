@@ -1,0 +1,11 @@
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
+food_type.drink,8,3,,tea,茶,chá
+food_type.drink,8,6,,milk,牛奶,niúnǎi
+food_type.drink,8,12,,milk tea,奶茶,nǎichá
+food_type.drink,8,6,,coffee,咖啡,kāfēi
+food_type.drink,8,16,,Coca-Cola,可乐,kělè
+food_type.drink,8,108,,Sprit,雪碧,xuěbì
+food_type.drink,8,9,,beer,啤酒,píjiǔ
+food_type.drink,8,20,,white alcohol,白酒,báijiǔ
+food_type.drink,8,52,,white wine,白葡萄酒,bái pútáojiǔ
+food_type.drink,8,20,,red wine,红酒,hóngjiǔ
