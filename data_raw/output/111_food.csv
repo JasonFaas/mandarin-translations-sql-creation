@@ -38,3 +38,6 @@ food_type.flour food,33,15,,steamed bread,馒头,mántou
 food_type.flour food,33,28,,sesame seed cake,烧饼,shāobǐng
 food_type.flour food,33,24,,fried bread steak,油条,yóutiáo
 food_type.flour food,33,9,,cake,蛋糕,dàngāo
+food_type.vegetable,8,100,,bamboo shoot,笋,sǔn
+food_type.vegetable,8,100,,scallion,葱,cōng
+food_type.vegetable,8,100,,eggplant,茄子,qiézi
