@@ -41,3 +41,18 @@ food_type.flour food,33,9,,cake,蛋糕,dàngāo
 food_type.vegetable,8,100,,bamboo shoot,笋,sǔn
 food_type.vegetable,8,100,,scallion,葱,cōng
 food_type.vegetable,8,100,,eggplant,茄子,qiézi
+food_type.drink,8,3,,tea,茶,chá
+food_type.drink,8,6,,milk,牛奶,niúnǎi
+food_type.drink,8,12,,milk tea,奶茶,nǎichá
+food_type.drink,8,6,,coffee,咖啡,kāfēi
+food_type.drink,8,16,,Coca-Cola,可乐,kělè
+food_type.drink,8,108,,Sprit,雪碧,xuěbì
+food_type.drink,8,9,,beer,啤酒,píjiǔ
+food_type.drink,8,20,,white alcohol,白酒,báijiǔ
+food_type.drink,8,52,,white wine,白葡萄酒,bái pútáojiǔ
+food_type.drink,8,20,,red wine,红酒,hóngjiǔ
+food_type.drink,8,120,,soy milk,豆浆,dòujiāng
+food_type.drink,8,12,,black tea,红茶,hóngchá
+food_type.drink,8,16,,green tea,绿茶,lǜchá
+food_type.drink,8,48,,oolong tea,乌龙茶,wūlóngchá
+food_type.drink,8,100,,jasmine tea,茉莉花茶,mòlìhuā chá
