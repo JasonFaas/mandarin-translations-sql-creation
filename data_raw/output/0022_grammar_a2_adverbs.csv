@@ -1,0 +1,2 @@
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
+-1,17,26,{ref:1;type:continents;specific:Asia}{ref:2;type:continents;ref_not:1},I have only been to {ref:1} and {ref:2},我 只 去过 {ref:1} 和 {ref:2},wǒ zhǐ qùguò {ref:1} hé {ref:2}

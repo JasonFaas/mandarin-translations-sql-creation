@@ -1,3 +1,0 @@
-fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
--1,5,24,{ref:1;type:food_type;specific:drink}{ref:2;type:food;fk_ref:1}{ref:3;type:food;fk_ref:1;ref_not:1},I am sorry. We do not have {ref:1}. Do you want {ref:2} instead?,对不起 . 我们 没有 {ref:1} . 你 要 {ref:2} 吗,duìbùqǐ. wǒmen méiyǒu {ref:1}. nǐ yào {ref:2} ma
--1,5,22,{ref:1;type:meat_type}{ref:1;type:meat_type:ref_not:1},Do you want {ref:1} or {ref:2},你 要 {ref:1} 还是 {ref:2},nǐ yào {ref:1} háishì {ref:2}

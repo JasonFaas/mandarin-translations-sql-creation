@@ -1,3 +1,2 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
--1,17,26,{ref:1;type:continents;specific:Asia}{ref:2;type:continents;ref_not:1},I have only been to {ref:1} and {ref:2},我 只 去过 {ref:1} 和 {ref:2},wǒ zhǐ qùguò {ref:1} hé {ref:2}
 -1,3,30,{ref:1;type:language_expression_type}{ref:2;type:language_expression_type;ref_not:1}{ref:3;type:spoken_language}{ref:4;type:spoken_language;ref_not:3},{ref:1} {ref:3} is more difficult than {ref:2} {ref:4},{ref:1} {ref:3} 比 {ref:2} {ref:4} 难,{ref:1}{ref:3} bǐ {ref:2}{ref:4} nán

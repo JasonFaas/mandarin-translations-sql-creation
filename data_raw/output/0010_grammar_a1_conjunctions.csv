@@ -1,0 +1,2 @@
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
+-1,5,22,{ref:1;type:meat_type}{ref:1;type:meat_type:ref_not:1},Do you want {ref:1} or {ref:2},你 要 {ref:1} 还是 {ref:2},nǐ yào {ref:1} háishì {ref:2}

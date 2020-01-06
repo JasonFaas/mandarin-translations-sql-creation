@@ -5,8 +5,3 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
 -1,3,22,{ref:1;type:food_type}{ref:2;type:food;fk_ref:1},My favorite {ref:1} is {ref:2},我 最 喜欢 的 {ref:1} 是 {ref:2},wǒ zuì xǐhuān de {ref:1} shì {ref:2}
 -1,3,25,{ref:1;type:hobby},Is {ref:1} difficult,{ref:1} 容 不 容易,{ref:1} róng bù róngyì
 -1,3,19,{ref:1;type:country_name}{ref:2;type:country_name;ref_not:1}{ref:5;type:eval;left:3;right:4;sign:>;true:comparison_adjectives.bigger;false:comparison_adjectives.smaller} {ref:3;type:country_size_km2;fk_ref:1} {ref:4;type:country_size_km2;fk_ref:2},{ref:1} is {ref:5} than {ref:2},{ref:1} 比 {ref:2} {ref:5},{ref:1} bǐ {ref:2} {ref:5}
--1,5,16,{ref:1;type:int;min:1;max:99999}{ref:2;type:food},I have {ref:1} {ref:2},我 有 {ref:1} 个 {ref:2},wǒ yǒu {ref:1} gè {ref:2}
--1,5,19,{ref:1;type:meat_type},Why do you not eat {ref:1},为什么 你 不吃 {ref:1},wèishéme nǐ bù chī {ref:1}
--1,5,28,{ref:1;type:day_of_week}{ref:2;type:place_type},Next {ref:1} we all can go to {ref:2}.,下个 {ref:1} 我们 都 可以 去 {ref:2},xià gè {ref:1} wǒmen dōu kěyǐ qù {ref:2}
--1,3,22,{ref:1;type:pronoun}{ref:2;type:secondary_subjects},{ref:1} also want to study {ref:2},{ref:1} 也 想学 {ref:2},{ref:1} yě xiǎng xué {ref:2}
-
