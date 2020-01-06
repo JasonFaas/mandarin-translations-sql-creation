@@ -1,6 +1,5 @@
 import jieba
 import pinyin
-import time
 
 from googletrans import Translator
 
@@ -115,9 +114,10 @@ class IoHelper(object):
         return with_spaces.strip()
 
     def pinyin_from_hanzi_googletrans(self, row):
-        sleep_time = 0.1
-        time.sleep(sleep_time)
-        print("Slept for {} seconds.".format(sleep_time))
+        column_count = len(row)
+        print('Column count: {}'.format(column_count))
+        if column_count != 7:
+            raise Exception("Columns did not equal 7".format(column_count))
 
         hanzi = row['Hanzi'].replace(' ', '')
         gt_translation = self.googletrans_translator.translate(hanzi, src='zh-cn', dest='en')

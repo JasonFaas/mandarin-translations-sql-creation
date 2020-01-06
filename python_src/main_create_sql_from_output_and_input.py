@@ -1,6 +1,7 @@
 import csv
 import sqlite3
 import os
+import time
 
 import pandas as pd
 
@@ -39,6 +40,9 @@ output_path = '{}/output/'.format(data_location)
 input_file_names = os.listdir(input_path)
 input_file_names.sort()
 
+sleep_time = 0.05
+print("Sleep each translation for {} seconds.".format(sleep_time))
+
 for filename in input_file_names:
     print('Working with {}'.format(filename))
     input_csv_filename = '{}{}'.format(input_path, filename)
@@ -56,6 +60,7 @@ for filename in input_file_names:
 
     # get info for new input to output
     df_new_input[columns[pinyin_row]] = df_new_input.apply(lambda row: ioHelper.pinyin_from_hanzi_googletrans(row), axis=1)
+    time.sleep(sleep_time)
     df_new_input[columns[hanzi_row]] = df_new_input.apply(lambda row: ioHelper.hanzi_with_spaces(row), axis=1)
     df_new_input[columns[auto_level_row]] = df_new_input.apply(lambda row: ioHelper.auto_level(row), axis=1)
     df_new_input[columns[manual_level_row]] = df_new_input.apply(lambda row: ioHelper.manual_level(row), axis=1)
