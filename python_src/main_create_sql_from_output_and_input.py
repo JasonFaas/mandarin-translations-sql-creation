@@ -1,6 +1,5 @@
 import sqlite3
 import os
-import time
 
 import pandas as pd
 
@@ -27,8 +26,9 @@ COLUMNS = (
     HANZI,
     PINYIN,
 )
+sleep_time = 0.2
 
-ioHelper = IoHelper()
+ioHelper = IoHelper(sleep_time)
 ioHelper.prepareAutoLevel()
 ioHelper.runUnitTests()
 
@@ -40,7 +40,6 @@ output_path = '{}/output/'.format(data_location)
 input_file_names = os.listdir(input_path)
 input_file_names.sort()
 
-sleep_time = 0.1
 print("Sleep each translation for {} seconds.".format(sleep_time))
 
 for filename in input_file_names:
@@ -60,7 +59,7 @@ for filename in input_file_names:
 
     # get info for new input to output
     df_new_input[PINYIN] = df_new_input.apply(lambda row: ioHelper.pinyin_from_hanzi_googletrans(row), axis=1)
-    time.sleep(sleep_time)
+    exit(66)
     df_new_input[HANZI] = df_new_input.apply(lambda row: ioHelper.hanzi_with_spaces(row), axis=1)
     df_new_input[AUTO_LEVEL] = df_new_input.apply(lambda row: ioHelper.auto_level(row), axis=1)
     df_new_input[MANUAL_LEVEL] = df_new_input.apply(lambda row: ioHelper.manual_level(row), axis=1)

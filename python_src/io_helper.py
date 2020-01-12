@@ -1,5 +1,6 @@
 import jieba
 import pinyin
+import time
 
 from googletrans import Translator
 
@@ -10,10 +11,11 @@ MAX_HSK_LEVEL_PLUS_ONE = 7 + 1
 
 class IoHelper(object):
 
-    def __init__(self):
+    def __init__(self, sleep_time):
         self.googletrans_translator = Translator()
         self.hsk_word_list = {}
         self.hsk_char_list = {}
+        self.sleep_time = sleep_time
 
     def pinyin_from_hanzi(self, row):
         nh2 = row['Hanzi']
@@ -114,13 +116,18 @@ class IoHelper(object):
         return with_spaces.strip()
 
     def pinyin_from_hanzi_googletrans(self, row):
+        time.sleep(self.sleep_time)
         column_count = len(row)
         if column_count != 7:
             raise Exception("Columns did not equal 7".format(column_count))
 
-        print('\n')
-        hanzi = row['Hanzi'].replace(' ', '')
+        hanzi_value = row['Hanzi']
+        hanzi = hanzi_value.replace(' ', '')
+        print('jason')
         print(hanzi)
+
+        return hanzi
+
         gt_translation = self.googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
         # print(gt_translation, flush=True)
         # print(gt_translation.extra_data, flush=True)
