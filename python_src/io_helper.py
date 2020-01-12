@@ -123,15 +123,15 @@ class IoHelper(object):
 
         hanzi_value = row['Hanzi']
         hanzi = hanzi_value.replace(' ', '')
-        print('jason')
-        print(hanzi)
+        print('\n{} jason'.format(hanzi))
 
+        # TODO: Delete line below...why isn't that working???
         return hanzi
 
         gt_translation = self.googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
-        # print(gt_translation, flush=True)
-        # print(gt_translation.extra_data, flush=True)
-        # print(gt_translation.origin, ' -> ', gt_translation.text, flush=True)
+        print(gt_translation, flush=True)
+        print(gt_translation.extra_data, flush=True)
+        print(gt_translation.origin, ' -> ', gt_translation.text, flush=True)
         translation_ = gt_translation.extra_data['translation']
         if len(translation_) < 2:
             return hanzi
