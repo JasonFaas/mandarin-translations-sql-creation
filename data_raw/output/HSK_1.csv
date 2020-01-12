@@ -6,11 +6,11 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
 -1,1,3,,,北京,běijīng
 -1,1,3,,,本,běn
 -1,1,3,,,不,bù
--1,1,3,,,不 客气,bù kèqì
+-1,1,3,,,不客气,bú kèqi
 -1,1,3,,,菜,cài
 -1,1,3,,,茶,chá
 -1,1,3,,,吃,chī
--1,1,3,,,出租车,chūzū chē
+-1,1,3,,,出租车,chūzūchē
 -1,1,3,,,打电话,dǎ diànhuà
 -1,1,3,,,大,dà
 -1,1,3,,,的,de
@@ -18,19 +18,19 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
 -1,1,3,,,电脑,diànnǎo
 -1,1,3,,,电视,diànshì
 -1,1,3,,,电影,diànyǐng
--1,1,3,,,东西,dōngxī
+-1,1,3,,,东西,dōngxi
 -1,1,3,,,都,dōu
 -1,1,3,,,读,dú
--1,1,3,,,对不起,duìbùqǐ
+-1,1,3,,,对不起,duìbuqǐ
 -1,1,3,,,多,duō
--1,1,3,,,多少,duōshǎo
+-1,1,3,,,多少,duōshao
 -1,1,3,,,儿子,érzi
 -1,1,3,,,二,èr
 -1,1,3,,,饭店,fàndiàn
 -1,1,3,,,飞机,fēijī
 -1,1,3,,,分钟,fēnzhōng
 -1,1,3,,,高兴,gāoxìng
--1,1,3,,,个,gè
+-1,1,3,,,个,ge
 -1,1,3,,,工作,gōngzuò
 -1,1,3,,,狗,gǒu
 -1,1,3,,,汉语,hànyǔ
@@ -39,7 +39,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
 -1,1,3,,,喝,hē
 -1,1,3,,,和,hé
 -1,1,3,,,很,hěn
--1,1,3,,,后面,hòumiàn
+-1,1,3,,,后面,hòumian
 -1,1,3,,,回,huí
 -1,1,3,,,会,huì
 -1,1,3,,,几,jǐ
@@ -57,24 +57,24 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
 -1,1,3,,,冷,lěng
 -1,1,3,,,里,lǐ
 -1,1,3,,,六,liù
--1,1,3,,,妈妈,māmā
+-1,1,3,,,妈妈,māma
 -1,1,3,,,吗,ma
 -1,1,3,,,买,mǎi
 -1,1,3,,,猫,māo
--1,1,3,,,没关系,méiguānxì
+-1,1,3,,,没关系,méiguānxi
 -1,1,3,,,没有,méiyǒu
 -1,1,3,,,米饭,mǐfàn
--1,1,3,,,名字,míngzì
+-1,1,3,,,名字,míngzi
 -1,1,3,,,明天,míngtiān
 -1,1,3,,,哪,nǎ
--1,1,3,,,哪儿,nǎ'er
+-1,1,3,,,哪儿,nǎr
 -1,1,3,,,那,nà
 -1,1,3,,,呢,ne
 -1,1,3,,,能,néng
 -1,1,3,,,你,nǐ
 -1,1,3,,,年,nián
 -1,1,3,,,女儿,nǚ'ér
--1,1,3,,,朋友,péngyǒu
+-1,1,3,,,朋友,péngyou
 -1,1,3,,,漂亮,piàoliang
 -1,1,3,,,苹果,píngguǒ
 -1,1,3,,,七,qī
@@ -84,7 +84,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
 -1,1,3,,,去,qù
 -1,1,3,,,热,rè
 -1,1,3,,,人,rén
--1,1,3,,,认识,rènshì
+-1,1,3,,,认识,rènshi
 -1,1,3,,,三,sān
 -1,1,3,,,商店,shāngdiàn
 -1,1,3,,,上,shàng
@@ -93,7 +93,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
 -1,1,3,,,谁,shéi
 -1,1,3,,,什么,shénme
 -1,1,3,,,十,shí
--1,1,3,,,时候,shíhòu
+-1,1,3,,,时候,shíhou
 -1,1,3,,,是,shì
 -1,1,3,,,书,shū
 -1,1,3,,,水,shuǐ
@@ -108,29 +108,29 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
 -1,1,3,,,天气,tiānqì
 -1,1,3,,,听,tīng
 -1,1,3,,,同学,tóngxué
--1,1,3,,,喂,wèi
+-1,1,3,,,喂,wéi
 -1,1,3,,,我,wǒ
 -1,1,3,,,我们,wǒmen
 -1,1,3,,,五,wǔ
--1,1,3,,,喜欢,xǐhuān
+-1,1,3,,,喜欢,xǐhuan
 -1,1,3,,,下,xià
 -1,1,3,,,下午,xiàwǔ
--1,1,3,,,下雨,xià yǔ
--1,1,3,,,先生,xiānshēng
+-1,1,3,,,下雨,xiàyǔ
+-1,1,3,,,先生,xiānsheng
 -1,1,3,,,现在,xiànzài
 -1,1,3,,,想,xiǎng
 -1,1,3,,,小,xiǎo
--1,1,3,,,小姐,xiǎojiě
+-1,1,3,,,小姐,xiǎojie
 -1,1,3,,,些,xiē
 -1,1,3,,,写,xiě
--1,1,3,,,谢谢,xièxiè
--1,1,3,,,星期,xīngqí
--1,1,3,,,学生,xuéshēng
+-1,1,3,,,谢谢,xièxie
+-1,1,3,,,星期,xīngqī
+-1,1,3,,,学生,xuésheng
 -1,1,3,,,学习,xuéxí
 -1,1,3,,,学校,xuéxiào
 -1,1,3,,,一,yī
--1,1,3,,,一点儿,yīdiǎn er
--1,1,3,,,衣服,yīfú
+-1,1,3,,,一点儿,yìdiǎnr
+-1,1,3,,,衣服,yīfu
 -1,1,3,,,医生,yīshēng
 -1,1,3,,,医院,yīyuàn
 -1,1,3,,,椅子,yǐzi
@@ -139,7 +139,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin
 -1,1,3,,,再见,zàijiàn
 -1,1,3,,,在,zài
 -1,1,3,,,怎么,zěnme
--1,1,3,,,怎么样,zěnme yàng
+-1,1,3,,,怎么样,zěnmeyàng
 -1,1,3,,,这,zhè
 -1,1,3,,,中国,zhōngguó
 -1,1,3,,,中午,zhōngwǔ
