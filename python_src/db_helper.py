@@ -26,10 +26,20 @@ class DbHelper(object):
 
         for file_idx, filename in enumerate(output_file_names):
             is_input_to_primary_table = filename[0] == '0'
+            is_hsk_file = 'HSK_' == filename[:4]
+
+            create_new_table = False
+
             if is_input_to_primary_table:
                 table_name = 'translations'
+                create_new_table = file_idx == 0
+            elif is_hsk_file:
+                table_name = 'hsk'
+                create_new_table = 'HSK_1.csv' == filename
             else:
                 table_name = filename[filename.index('_') + 1:filename.index('.')]
+                create_new_table = True
+
 
             output_csv_filename = '{}{}'.format(self.OUTPUT_PATH, filename)
             with open(output_csv_filename, 'rt') as fin:  # `with` statement available in 2.5+
@@ -66,7 +76,7 @@ class DbHelper(object):
                     ref_split = str(to_db[idx][0]).split('.')
                     to_db[idx] = (db_in_mem[ref_split[0]][ref_split[1]] + 1,) + to_db[idx][1:]
 
-            if file_idx == 0 or not is_input_to_primary_table:
+            if create_new_table:
 
                 # TODO: Be careful here with `self.COLUMNS[:3]:`
                 # TODO: Clean this up!!!
@@ -87,21 +97,18 @@ class DbHelper(object):
 
             insert_str = self.INSERT_BASE.format(table_name)
 
-            print(insert_str)
-            print(to_db)
-
             self.cur.executemany(insert_str, to_db)
 
-    def writeHskTable(self):
-        table_name = '''hsk_info'''
-
-        hsk_table_creation = '''CREATE TABLE'''
-        hsk_table_creation += ''' '''
-        hsk_table_creation += table_name
-        hsk_table_creation += ''' '''
-        hsk_table_creation += '''([id] INTEGER PRIMARY KEY,[fk_parent] INTEGER,[Manual_Level] INTEGER,[Auto_Level] INTEGER,[Blanks] text,[English] text,[Hanzi] text,[Pinyin] text)'''
-        self.cur.execute(hsk_table_creation)
-
-        insert_str = self.INSERT_BASE.format(table_name)
-        
-        self.cur.executemany(insert_str, to_db)
+    # def writeHskTable(self):
+    #     table_name = '''hsk_info'''
+    #
+    #     hsk_table_creation = '''CREATE TABLE'''
+    #     hsk_table_creation += ''' '''
+    #     hsk_table_creation += table_name
+    #     hsk_table_creation += ''' '''
+    #     hsk_table_creation += '''([id] INTEGER PRIMARY KEY,[fk_parent] INTEGER,[Manual_Level] INTEGER,[Auto_Level] INTEGER,[Blanks] text,[English] text,[Hanzi] text,[Pinyin] text)'''
+    #     self.cur.execute(hsk_table_creation)
+    #
+    #     insert_str = self.INSERT_BASE.format(table_name)
+    #
+    #     self.cur.executemany(insert_str, to_db)

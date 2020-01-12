@@ -115,11 +115,12 @@ class IoHelper(object):
 
     def pinyin_from_hanzi_googletrans(self, row):
         column_count = len(row)
-        print('Column count: {}'.format(column_count))
         if column_count != 7:
             raise Exception("Columns did not equal 7".format(column_count))
 
+        print('\n')
         hanzi = row['Hanzi'].replace(' ', '')
+        print(hanzi)
         gt_translation = self.googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
         # print(gt_translation, flush=True)
         # print(gt_translation.extra_data, flush=True)

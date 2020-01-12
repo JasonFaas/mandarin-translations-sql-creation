@@ -40,7 +40,7 @@ output_path = '{}/output/'.format(data_location)
 input_file_names = os.listdir(input_path)
 input_file_names.sort()
 
-sleep_time = 0.05
+sleep_time = 0.1
 print("Sleep each translation for {} seconds.".format(sleep_time))
 
 for filename in input_file_names:
