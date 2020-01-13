@@ -55,6 +55,7 @@ for filename in output_file_names:
 
     df_output[HANZI] = df_output.apply(lambda row: ioHelper.spaces_for_hanzi_if_no_pinyin(row), axis=1)
 
+    # TODO: Seriously, fix this
     df_output[PINYIN] = df_output.apply(lambda row: ioHelper.pinyin_from_hanzi_googletrans_if_no_pinyin(row), axis=1)
 
     df_output[PINYIN_2] = df_output.apply(lambda row: ioHelper.pinyin_2_none_to_empty(row), axis=1)
