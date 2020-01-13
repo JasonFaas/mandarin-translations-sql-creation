@@ -1,18 +1,18 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,8,20,,USA,美国,měiguó
--1,6,3,,China,中国,zhōngguó
--1,6,16,,France,法国,fàguó
--1,6,24,,Germany,德国,déguó
--1,6,120,,Ireland,爱尔兰,ài'ěrlán
--1,6,28,,Italy,意大利,yìdàlì
--1,6,24,,Brazil,巴西,bāxī
--1,6,100,,Egypt,埃及,āijí
--1,6,32,,India,印度,yìndù
--1,6,12,,Japan,日本,rìběn
--1,6,36,,North Korea,北朝鲜,běi cháoxiǎn
--1,6,100,,South Korea,韩国,hánguó
--1,6,36,,Mexico,墨西哥,mòxīgē
--1,6,128,,Russia,俄罗斯,èluósī
--1,6,24,,Spain,西班牙,xībānyá
--1,6,28,,Canada,加拿大,jiānádà
--1,6,24,,United Kingdom,英国,yīngguó
+-1,8,20,,USA,美国,měiguó,
+-1,6,3,,China,中国,zhōngguó,
+-1,6,16,,France,法国,fàguó,
+-1,6,24,,Germany,德国,déguó,
+-1,6,120,,Ireland,爱尔兰,ài'ěrlán,
+-1,6,28,,Italy,意大利,yìdàlì,
+-1,6,24,,Brazil,巴西,bāxī,
+-1,6,100,,Egypt,埃及,āijí,
+-1,6,32,,India,印度,yìndù,
+-1,6,12,,Japan,日本,rìběn,
+-1,6,36,,North Korea,北朝鲜,běi cháoxiǎn,
+-1,6,100,,South Korea,韩国,hánguó,
+-1,6,36,,Mexico,墨西哥,mòxīgē,
+-1,6,128,,Russia,俄罗斯,èluósī,
+-1,6,24,,Spain,西班牙,xībānyá,
+-1,6,28,,Canada,加拿大,jiānádà,
+-1,6,24,,United Kingdom,英国,yīngguó,

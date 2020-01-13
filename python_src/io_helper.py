@@ -164,7 +164,7 @@ class IoHelper(object):
         hanzi = hanzi_value.replace(' ', '')
         print('\n{} {} jason'.format(hanzi, pinyin_value))
 
-        if pinyin_value and pinyin_value is str and len(pinyin_value) > 0:
+        if pinyin_value and isinstance(pinyin_value, str) and len(pinyin_value) > 0:
             return pinyin_value
 
         # TODO: Delete line below...why isn't that working???

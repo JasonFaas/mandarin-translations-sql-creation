@@ -1,58 +1,58 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
-food_type.vegetable,8,12,,tomato,西红柿,xīhóngshì
-food_type.vegetable,33,15,,corn,玉米,yùmǐ
-food_type.fruit,6,3,,apple,苹果,píngguǒ
-food_type.fruit,22,9,,banana,香蕉,xiāngjiāo
-food_type.fruit,33,32,,dragon fruit,火龙果,huǒlóng guǒ
-food_type.fruit,33,36,,blackberry,黑莓,hēiméi
-food_type.fruit,33,40,,blueberry,蓝莓,lánméi
-food_type.fruit,33,21,,cherry,樱桃,yīngtáo
-food_type.fruit,33,12,,grape,葡萄,pútáo
-food_type.fruit,33,21,,lemon,柠檬,níngméng
-food_type.fruit,33,28,,mango,芒果,mángguǒ
-food_type.fruit,33,28,,orange,橙子,chéngzi
-food_type.fruit,33,15,,peach,桃,táo
-food_type.fruit,33,12,,pear,李,lǐ
-food_type.fruit,33,21,,pineapple,菠萝,bōluó
-food_type.fruit,33,40,,strawberry,草莓,cǎoméi
-food_type.fruit,33,6,,watermelon,西瓜,xīguā
-food_type.vegetable,8,15,,potato,土豆,tǔdòu
-food_type.vegetable,8,104,,ginger,生姜,shēngjiāng
-food_type.vegetable,8,104,,garlic,大蒜,dàsuàn
-food_type.vegetable,8,104,,broccoli,西兰花,xī lánhuā
-food_type.vegetable,8,20,,cucumber,黄瓜,huángguā
-food_type.vegetable,8,100,,mushroom,蘑菇,mógū
-food_type.vegetable,8,18,,green pepper,请教,qǐngjiào
-food_type.vegetable,8,18,,green pepper,请教,qǐngjiào
-food_type.vegetable,8,128,,radish,萝卜,luóbo
-food_type.vegetable,8,12,,cabbage,白菜,báicài
-food_type.vegetable,8,32,,spinach,菠菜,bōcài
-food_type.vegetable,8,20,,pumpkin,南瓜,nánguā
-food_type.meat,8,48,,chicken wing,鸡翅膀,jī chìbǎng
-food_type.meat,8,8,,hot dog,热狗,règǒu
-food_type.fruit,33,28,,avocado,牛油果,niúyóuguǒ
-food_type.flour food,33,6,,noodles,面条,miàntiáo
-food_type.flour food,33,12,,dumplings,饺子,jiǎozi
-food_type.flour food,33,12,,stuffed buns,包子,bāozi
-food_type.flour food,33,15,,steamed bread,馒头,mántou
-food_type.flour food,33,28,,sesame seed cake,烧饼,shāobǐng
-food_type.flour food,33,24,,fried bread steak,油条,yóutiáo
-food_type.flour food,33,9,,cake,蛋糕,dàngāo
-food_type.vegetable,8,100,,bamboo shoot,笋,sǔn
-food_type.vegetable,8,100,,scallion,葱,cōng
-food_type.vegetable,8,100,,eggplant,茄子,qiézi
-food_type.drink,8,3,,tea,茶,chá
-food_type.drink,8,6,,milk,牛奶,niúnǎi
-food_type.drink,8,12,,milk tea,奶茶,nǎichá
-food_type.drink,8,6,,coffee,咖啡,kāfēi
-food_type.drink,8,16,,Coca-Cola,可乐,kělè
-food_type.drink,8,108,,Sprit,雪碧,xuěbì
-food_type.drink,8,9,,beer,啤酒,píjiǔ
-food_type.drink,8,20,,white alcohol,白酒,báijiǔ
-food_type.drink,8,52,,white wine,白葡萄酒,bái pútáojiǔ
-food_type.drink,8,20,,red wine,红酒,hóngjiǔ
-food_type.drink,8,120,,soy milk,豆浆,dòujiāng
-food_type.drink,8,12,,black tea,红茶,hóngchá
-food_type.drink,8,16,,green tea,绿茶,lǜchá
-food_type.drink,8,48,,oolong tea,乌龙茶,wūlóngchá
-food_type.drink,8,100,,jasmine tea,茉莉花茶,mòlìhuā chá
+food_type.vegetable,8,12,,tomato,西红柿,xīhóngshì,
+food_type.vegetable,33,15,,corn,玉米,yùmǐ,
+food_type.fruit,6,3,,apple,苹果,píngguǒ,
+food_type.fruit,22,9,,banana,香蕉,xiāngjiāo,
+food_type.fruit,33,32,,dragon fruit,火龙果,huǒlóng guǒ,
+food_type.fruit,33,36,,blackberry,黑莓,hēiméi,
+food_type.fruit,33,40,,blueberry,蓝莓,lánméi,
+food_type.fruit,33,21,,cherry,樱桃,yīngtáo,
+food_type.fruit,33,12,,grape,葡萄,pútáo,
+food_type.fruit,33,21,,lemon,柠檬,níngméng,
+food_type.fruit,33,28,,mango,芒果,mángguǒ,
+food_type.fruit,33,28,,orange,橙子,chéngzi,
+food_type.fruit,33,15,,peach,桃,táo,
+food_type.fruit,33,12,,pear,李,lǐ,
+food_type.fruit,33,21,,pineapple,菠萝,bōluó,
+food_type.fruit,33,40,,strawberry,草莓,cǎoméi,
+food_type.fruit,33,6,,watermelon,西瓜,xīguā,
+food_type.vegetable,8,15,,potato,土豆,tǔdòu,
+food_type.vegetable,8,104,,ginger,生姜,shēngjiāng,
+food_type.vegetable,8,104,,garlic,大蒜,dàsuàn,
+food_type.vegetable,8,104,,broccoli,西兰花,xī lánhuā,
+food_type.vegetable,8,20,,cucumber,黄瓜,huángguā,
+food_type.vegetable,8,100,,mushroom,蘑菇,mógū,
+food_type.vegetable,8,18,,green pepper,请教,qǐngjiào,
+food_type.vegetable,8,18,,green pepper,请教,qǐngjiào,
+food_type.vegetable,8,128,,radish,萝卜,luóbo,
+food_type.vegetable,8,12,,cabbage,白菜,báicài,
+food_type.vegetable,8,32,,spinach,菠菜,bōcài,
+food_type.vegetable,8,20,,pumpkin,南瓜,nánguā,
+food_type.meat,8,48,,chicken wing,鸡翅膀,jī chìbǎng,
+food_type.meat,8,8,,hot dog,热狗,règǒu,
+food_type.fruit,33,28,,avocado,牛油果,niúyóuguǒ,
+food_type.flour food,33,6,,noodles,面条,miàntiáo,
+food_type.flour food,33,12,,dumplings,饺子,jiǎozi,
+food_type.flour food,33,12,,stuffed buns,包子,bāozi,
+food_type.flour food,33,15,,steamed bread,馒头,mántou,
+food_type.flour food,33,28,,sesame seed cake,烧饼,shāobǐng,
+food_type.flour food,33,24,,fried bread steak,油条,yóutiáo,
+food_type.flour food,33,9,,cake,蛋糕,dàngāo,
+food_type.vegetable,8,100,,bamboo shoot,笋,sǔn,
+food_type.vegetable,8,100,,scallion,葱,cōng,
+food_type.vegetable,8,100,,eggplant,茄子,qiézi,
+food_type.drink,8,3,,tea,茶,chá,
+food_type.drink,8,6,,milk,牛奶,niúnǎi,
+food_type.drink,8,12,,milk tea,奶茶,nǎichá,
+food_type.drink,8,6,,coffee,咖啡,kāfēi,
+food_type.drink,8,16,,Coca-Cola,可乐,kělè,
+food_type.drink,8,108,,Sprit,雪碧,xuěbì,
+food_type.drink,8,9,,beer,啤酒,píjiǔ,
+food_type.drink,8,20,,white alcohol,白酒,báijiǔ,
+food_type.drink,8,52,,white wine,白葡萄酒,bái pútáojiǔ,
+food_type.drink,8,20,,red wine,红酒,hóngjiǔ,
+food_type.drink,8,120,,soy milk,豆浆,dòujiāng,
+food_type.drink,8,12,,black tea,红茶,hóngchá,
+food_type.drink,8,16,,green tea,绿茶,lǜchá,
+food_type.drink,8,48,,oolong tea,乌龙茶,wūlóngchá,
+food_type.drink,8,100,,jasmine tea,茉莉花茶,mòlìhuā chá,

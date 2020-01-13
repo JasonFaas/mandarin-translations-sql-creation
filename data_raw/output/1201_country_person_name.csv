@@ -1,18 +1,18 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
-country_name.USA,11,22,,American,美国 人,měiguó rén
-country_name.China,8,4,,Chinese,中国 人,zhōngguó rén
-country_name.France,8,20,,French,法国人,fàguó rén
-country_name.Germany,6,28,,German,德国人,déguó rén
-country_name.Ireland,6,120,,Irish,爱尔兰人,ài'ěrlán rén
-country_name.Italy,6,32,,Italian,意大利人,yìdàlì rén
-country_name.Brazil,6,28,,Brazilian,巴西人,bāxī rén
-country_name.Egypt,6,102,,Egyptian,埃及 人,āijí rén
-country_name.India,6,36,,Indian,印度人,yìn duó rén
-country_name.Japan,6,14,,Japanese,日本 人,日本人
-country_name.North Korea,6,38,,North Korean,北朝鲜 人,běi cháoxiǎn rén
-country_name.South Korea,6,102,,South Korean,韩国 人,hánguó rén
-country_name.Mexico,6,40,,Mexican,墨西哥人,mòxīgē rén
-country_name.Russia,6,130,,Russian,俄罗斯 人,èluósī rén
-country_name.Spain,6,28,,Spanish,西班牙人,xībānyá rén
-country_name.Canada,6,32,,Canadian,加拿大人,jiānádà rén
-country_name.United Kingdom,6,28,,British,英国人,yīngguó rén
+country_name.USA,11,22,,American,美国 人,měiguó rén,
+country_name.China,8,4,,Chinese,中国 人,zhōngguó rén,
+country_name.France,8,20,,French,法国人,fàguó rén,
+country_name.Germany,6,28,,German,德国人,déguó rén,
+country_name.Ireland,6,120,,Irish,爱尔兰人,ài'ěrlán rén,
+country_name.Italy,6,32,,Italian,意大利人,yìdàlì rén,
+country_name.Brazil,6,28,,Brazilian,巴西人,bāxī rén,
+country_name.Egypt,6,102,,Egyptian,埃及 人,āijí rén,
+country_name.India,6,36,,Indian,印度人,yìn duó rén,
+country_name.Japan,6,14,,Japanese,日本 人,日本人,
+country_name.North Korea,6,38,,North Korean,北朝鲜 人,běi cháoxiǎn rén,
+country_name.South Korea,6,102,,South Korean,韩国 人,hánguó rén,
+country_name.Mexico,6,40,,Mexican,墨西哥人,mòxīgē rén,
+country_name.Russia,6,130,,Russian,俄罗斯 人,èluósī rén,
+country_name.Spain,6,28,,Spanish,西班牙人,xībānyá rén,
+country_name.Canada,6,32,,Canadian,加拿大人,jiānádà rén,
+country_name.United Kingdom,6,28,,British,英国人,yīngguó rén,

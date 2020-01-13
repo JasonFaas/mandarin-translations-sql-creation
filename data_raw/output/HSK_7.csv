@@ -1,7 +1,7 @@
-﻿fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,7,7,,,俄
--1,7,7,,,企鹅
--1,7,7,,,樱桃
--1,7,7,,,柠檬
--1,7,7,,,莓
--1,7,7,,,菠萝
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
+-1,7,7,,,俄,JAF_Test,
+-1,7,7,,,企鹅,JAF_Test,
+-1,7,7,,,樱桃,JAF_Test,
+-1,7,7,,,柠檬,JAF_Test,
+-1,7,7,,,莓,JAF_Test,
+-1,7,7,,,菠萝,JAF_Test,

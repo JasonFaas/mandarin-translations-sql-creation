@@ -1,4 +1,4 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,5,22,{ref:1;type:meat_type}{ref:2;type:meat_type;ref_not:1},Do you want {ref:1} or {ref:2},你 要 {ref:1} 还是 {ref:2},nǐ yào {ref:1} háishì {ref:2}
--1,5,30,{ref:1;type:utensil}{ref:2;type:utensil;ref_not:1},Should we use {ref:1} or {ref:2},我们 用 {ref:1} 还是 {ref:2},wǒmen yòng {ref:1} háishì {ref:2}
--1,5,20,{ref:1;type:written_language}{ref:2;type:written_language;ref_not:1},I read {ref:1} and {ref:2},我读 {ref:1} 和 {ref:2},wǒ dú {ref:1} hé {ref:2}
+-1,5,22,{ref:1;type:meat_type}{ref:2;type:meat_type;ref_not:1},Do you want {ref:1} or {ref:2},你 要 {ref:1} 还是 {ref:2},nǐ yào {ref:1} háishì {ref:2},
+-1,5,30,{ref:1;type:utensil}{ref:2;type:utensil;ref_not:1},Should we use {ref:1} or {ref:2},我们 用 {ref:1} 还是 {ref:2},wǒmen yòng {ref:1} háishì {ref:2},
+-1,5,20,{ref:1;type:written_language}{ref:2;type:written_language;ref_not:1},I read {ref:1} and {ref:2},我读 {ref:1} 和 {ref:2},wǒ dú {ref:1} hé {ref:2},
