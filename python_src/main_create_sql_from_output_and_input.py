@@ -60,11 +60,11 @@ for filename in input_file_names:
     ioHelper.verify_no_new_old_duplicates(df_new_input, df_existing_output)
 
     # get info for new input to output
+    df_new_input[HANZI] = df_new_input.apply(lambda row: ioHelper.hanzi_with_spaces(row), axis=1)
     df_new_input[PINYIN] = df_new_input.apply(lambda row: ioHelper.pinyin_from_hanzi_googletrans(row), axis=1)
     exit(66)
-    df_new_input[HANZI] = df_new_input.apply(lambda row: ioHelper.hanzi_with_spaces(row), axis=1)
     df_new_input[AUTO_LEVEL] = df_new_input.apply(lambda row: ioHelper.auto_level(row), axis=1)
-    df_new_input[MANUAL_LEVEL] = df_new_input.apply(lambda row: ioHelper.manual_level(row), axis=1)
+    # df_new_input[MANUAL_LEVEL] = df_new_input.apply(lambda row: ioHelper.manual_level(row), axis=1)
 
     df_merged = pd.concat([df_existing_output, df_new_input], ignore_index=True, sort=False)
 

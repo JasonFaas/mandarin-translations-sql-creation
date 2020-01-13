@@ -116,6 +116,11 @@ class IoHelper(object):
         raise Exception('Single Char not in HSK list')
 
     def hanzi_with_spaces(self, row):
+        pinyin_value = row[self.PINYIN]
+        if len(pinyin_value) > 0:
+            return row[self.HANZI]
+
+
         nh2 = row[self.HANZI].replace(' ', '')
 
         seg_list = jieba.cut(nh2)
@@ -133,7 +138,6 @@ class IoHelper(object):
         return with_spaces.strip()
 
     def pinyin_from_hanzi_googletrans(self, row):
-        time.sleep(self.sleep_time)
         column_count = len(row)
         if column_count != 7:
             raise Exception("Columns did not equal 7".format(column_count))
@@ -141,10 +145,15 @@ class IoHelper(object):
         hanzi_value = row[self.HANZI]
         pinyin_value = row[self.PINYIN]
         hanzi = hanzi_value.replace(' ', '')
-        print('\n{} jason'.format(hanzi))
+        print('\n{} {} jason'.format(hanzi, pinyin_value))
+
+        if len(pinyin_value) > 0:
+            return pinyin_value
 
         # TODO: Delete line below...why isn't that working???
-        return 'JAF_TEST'
+        return 'JAF_Test'
+
+        time.sleep(self.sleep_time)
 
         gt_translation = self.googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
         print(gt_translation, flush=True)
@@ -152,7 +161,7 @@ class IoHelper(object):
         print(gt_translation.origin, ' -> ', gt_translation.text, flush=True)
         translation_ = gt_translation.extra_data['translation']
         if len(translation_) < 2:
-            return hanzi
+            return 'JAF_Error'
         translation__ = translation_[1]
         translation___ = translation__[-1]
         translation_return = translation___.lower()

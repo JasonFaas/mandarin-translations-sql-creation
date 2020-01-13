@@ -54,6 +54,7 @@ class DbHelper(object):
                         i[('%s' % self.COLUMNS[4])],
                         i[('%s' % self.COLUMNS[5])],
                         i[('%s' % self.COLUMNS[6])],
+                        i[('%s' % self.COLUMNS[7])],
                     )
                     for i in dr]
 
