@@ -118,8 +118,17 @@ class IoHelper(object):
 
     def spaces_for_hanzi_if_no_pinyin(self, row):
         pinyin_value = row[self.PINYIN]
-        if len(pinyin_value) > 0:
-            return row[self.HANZI]
+
+        try:
+            if pinyin_value and pinyin_value is str and len(pinyin_value) > 0:
+                return row[self.HANZI]
+        except Exception as e:
+            print('Jason')
+            print(row[self.HANZI])
+            print(type(pinyin_value))
+            print(pinyin_value)
+            print('Faas')
+            raise e
 
 
         nh2 = row[self.HANZI].replace(' ', '')
@@ -147,15 +156,15 @@ class IoHelper(object):
 
     def pinyin_from_hanzi_googletrans_if_no_pinyin(self, row):
         column_count = len(row)
-        if column_count != 7:
-            raise Exception("Columns did not equal 7".format(column_count))
+        if column_count != 8:
+            raise Exception("Columns did not equal 8".format(column_count))
 
         hanzi_value = row[self.HANZI]
         pinyin_value = row[self.PINYIN]
         hanzi = hanzi_value.replace(' ', '')
         print('\n{} {} jason'.format(hanzi, pinyin_value))
 
-        if len(pinyin_value) > 0:
+        if pinyin_value and pinyin_value is str and len(pinyin_value) > 0:
             return pinyin_value
 
         # TODO: Delete line below...why isn't that working???
