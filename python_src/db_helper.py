@@ -45,6 +45,13 @@ class DbHelper(object):
             with open(output_csv_filename, 'rt') as fin:  # `with` statement available in 2.5+
                 # csv.DictReader uses first line in file for column headings by default
                 dr = csv.DictReader(fin)  # comma is default delimiter
+
+                # TODO: Fix bug here, but trying to get through a few things first
+                # print('\n')
+                # for what in dr:
+                #     print(what)
+
+
                 to_db = [
                     (
                         i[('%s' % self.COLUMNS[0])],

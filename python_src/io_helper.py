@@ -11,7 +11,7 @@ MAX_HSK_LEVEL_PLUS_ONE = 7 + 1
 
 class IoHelper(object):
 
-    def __init__(self, sleep_time, COLUMNS, FK_PARENT, MANUAL_LEVEL, AUTO_LEVEL, BLANKS, ENGLISH, HANZI, PINYIN):
+    def __init__(self, sleep_time, COLUMNS, FK_PARENT, MANUAL_LEVEL, AUTO_LEVEL, BLANKS, ENGLISH, HANZI, PINYIN, PINYIN_2):
         self.googletrans_translator = Translator()
         self.hsk_word_list = {}
         self.hsk_char_list = {}
@@ -25,6 +25,7 @@ class IoHelper(object):
         self.ENGLISH = ENGLISH
         self.HANZI = HANZI
         self.PINYIN = PINYIN
+        self.PINYIN_2 = PINYIN_2
 
     def pinyin_from_hanzi(self, row):
         nh2 = row[self.HANZI]
@@ -49,7 +50,7 @@ class IoHelper(object):
     def manual_level(self, row):
         return str(int(float(row[self.MANUAL_LEVEL])))
 
-    def auto_level(self, row):
+    def auto_level_if_no_level(self, row):
         return_level = 100
 
         try:
@@ -115,7 +116,7 @@ class IoHelper(object):
                 return hsk_level
         raise Exception('Single Char not in HSK list')
 
-    def hanzi_with_spaces(self, row):
+    def spaces_for_hanzi_if_no_pinyin(self, row):
         pinyin_value = row[self.PINYIN]
         if len(pinyin_value) > 0:
             return row[self.HANZI]
@@ -137,7 +138,14 @@ class IoHelper(object):
                 with_spaces += ' '
         return with_spaces.strip()
 
-    def pinyin_from_hanzi_googletrans(self, row):
+    def pinyin_2_none_to_empty(self, row):
+        pinyin_2 = row[self.PINYIN_2]
+        if pinyin_2:
+            return pinyin_2
+        else:
+            return ''
+
+    def pinyin_from_hanzi_googletrans_if_no_pinyin(self, row):
         column_count = len(row)
         if column_count != 7:
             raise Exception("Columns did not equal 7".format(column_count))
@@ -170,15 +178,16 @@ class IoHelper(object):
 
         return translation_return
 
-    def verify_no_new_old_duplicates(self, df_1, df_2):
-        set_1 = set(df_1[self.HANZI].tolist())
-        set_2 = set(df_2[self.HANZI].tolist())
-
-        if len(set_1.intersection(set_2)) > 0:
-            print('\n\nERROR_ERROR_ERROR:\nNew and old sets should not overlap')
-            print(set_1)
-            print(set_2)
-            exit(0)
+    # TODO: Supposed to update this to output-only paradigm
+    # def verify_no_new_old_duplicates(self, df_1, df_2):
+    #     set_1 = set(df_1[self.HANZI].tolist())
+    #     set_2 = set(df_2[self.HANZI].tolist())
+    #
+    #     if len(set_1.intersection(set_2)) > 0:
+    #         print('\n\nERROR_ERROR_ERROR:\nNew and old sets should not overlap')
+    #         print(set_1)
+    #         print(set_2)
+    #         exit(0)
 
     def prepareAutoLevel(self):
         for hsk_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
@@ -203,7 +212,7 @@ class IoHelper(object):
         self.test_auto_level_phrase_and_expected('你好', 4 + 4)
 
     def test_auto_level_phrase_and_expected(self, phrase, expected_level):
-        auto_level = self.auto_level(self.autoPackage(phrase))
+        auto_level = self.auto_level_if_no_level(self.autoPackage(phrase))
         assert str(expected_level) == auto_level, auto_level
 
     def autoPackage(self, phrase):

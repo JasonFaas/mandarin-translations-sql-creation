@@ -30,52 +30,42 @@ COLUMNS = (
 )
 sleep_time = 0.1
 
-ioHelper = IoHelper(sleep_time, COLUMNS, FK_PARENT, MANUAL_LEVEL, AUTO_LEVEL, BLANKS, ENGLISH, HANZI, PINYIN)
+ioHelper = IoHelper(sleep_time, COLUMNS, FK_PARENT, MANUAL_LEVEL, AUTO_LEVEL, BLANKS, ENGLISH, HANZI, PINYIN, PINYIN_2)
 ioHelper.prepareAutoLevel()
 ioHelper.runUnitTests()
 
 data_location = '../data_raw'
-empty_csv = '{}/empty.csv'.format(data_location)
-input_path = '{}/input/'.format(data_location)
-output_path = '{}/output/'.format(data_location)
+OUTPUT_PATH = '{}/output/'.format(data_location)
 
-input_file_names = os.listdir(input_path)
-input_file_names.sort()
+output_file_names = os.listdir(OUTPUT_PATH)
+output_file_names.sort()
 
 print("Sleep each translation for {} seconds.".format(sleep_time))
 
-for filename in input_file_names:
+for filename in output_file_names:
     print('Working with {}'.format(filename))
-    input_csv_filename = '{}{}'.format(input_path, filename)
-    output_csv_filename = '{}{}'.format(output_path, filename)
+    output_csv_filename = '{}{}'.format(OUTPUT_PATH, filename)
 
-    # read in known output
-    df_new_input = pd.read_csv(input_csv_filename, dtype=str)
-    if os.path.isfile(output_csv_filename):
-        df_existing_output = pd.read_csv(output_csv_filename)
-    else:
-        df_existing_output = pd.read_csv(empty_csv)
+    # read in output
+    df_output = pd.read_csv(output_csv_filename, dtype=str)
 
     # verify no new input conflicts
-    ioHelper.verify_no_new_old_duplicates(df_new_input, df_existing_output)
+    # TODO: Update verification that there no 2 hanzi are same
+    # ioHelper.verify_no_new_old_duplicates(df_new_input, df_existing_output)
 
-    # get info for new input to output
-    df_new_input[HANZI] = df_new_input.apply(lambda row: ioHelper.hanzi_with_spaces(row), axis=1)
-    df_new_input[PINYIN] = df_new_input.apply(lambda row: ioHelper.pinyin_from_hanzi_googletrans(row), axis=1)
-    exit(66)
-    df_new_input[AUTO_LEVEL] = df_new_input.apply(lambda row: ioHelper.auto_level(row), axis=1)
+    df_output[HANZI] = df_output.apply(lambda row: ioHelper.spaces_for_hanzi_if_no_pinyin(row), axis=1)
+
+    df_output[PINYIN] = df_output.apply(lambda row: ioHelper.pinyin_from_hanzi_googletrans_if_no_pinyin(row), axis=1)
+
+    df_output[PINYIN_2] = df_output.apply(lambda row: ioHelper.pinyin_2_none_to_empty(row), axis=1)
+
+    df_output[AUTO_LEVEL] = df_output.apply(lambda row: ioHelper.auto_level_if_no_level(row), axis=1)
+
+    # TODO: Hold this for now, but remove if all is well
     # df_new_input[MANUAL_LEVEL] = df_new_input.apply(lambda row: ioHelper.manual_level(row), axis=1)
 
-    df_merged = pd.concat([df_existing_output, df_new_input], ignore_index=True, sort=False)
+    df_output.to_csv(output_csv_filename, index=False, header=True, columns=COLUMNS)
 
-    # update output file
-    df_merged.to_csv(output_csv_filename, index=False, header=True, columns=COLUMNS)
-
-    # remove all data from input file
-    df_empty = df_new_input[0:0]
-    df_empty.to_csv(input_csv_filename, index=False)
-
-    os.remove(input_csv_filename)
 
 # TODO: Make ioHelper above and sqlCreation below different functions
 
@@ -87,7 +77,7 @@ os.remove(database_name)
 con = sqlite3.connect(database_name)
 cur = con.cursor()
 
-dbHelper = DbHelper(cur, output_path, COLUMNS, FK_PARENT, MANUAL_LEVEL, AUTO_LEVEL, BLANKS, ENGLISH, HANZI, PINYIN)
+dbHelper = DbHelper(cur, OUTPUT_PATH, COLUMNS, FK_PARENT, MANUAL_LEVEL, AUTO_LEVEL, BLANKS, ENGLISH, HANZI, PINYIN)
 dbHelper.writeTranslations()
 
 
