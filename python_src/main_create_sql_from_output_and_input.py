@@ -17,6 +17,7 @@ BLANKS = '''Blanks'''
 ENGLISH = '''English'''
 HANZI = '''Hanzi'''
 PINYIN = '''Pinyin'''
+PINYIN_2 = '''2nd_Pinyin'''
 COLUMNS = (
     FK_PARENT,
     MANUAL_LEVEL,
@@ -25,10 +26,11 @@ COLUMNS = (
     ENGLISH,
     HANZI,
     PINYIN,
+    PINYIN_2,
 )
-sleep_time = 0.2
+sleep_time = 0.1
 
-ioHelper = IoHelper(sleep_time)
+ioHelper = IoHelper(sleep_time, COLUMNS, FK_PARENT, MANUAL_LEVEL, AUTO_LEVEL, BLANKS, ENGLISH, HANZI, PINYIN)
 ioHelper.prepareAutoLevel()
 ioHelper.runUnitTests()
 

@@ -11,14 +11,23 @@ MAX_HSK_LEVEL_PLUS_ONE = 7 + 1
 
 class IoHelper(object):
 
-    def __init__(self, sleep_time):
+    def __init__(self, sleep_time, COLUMNS, FK_PARENT, MANUAL_LEVEL, AUTO_LEVEL, BLANKS, ENGLISH, HANZI, PINYIN):
         self.googletrans_translator = Translator()
         self.hsk_word_list = {}
         self.hsk_char_list = {}
         self.sleep_time = sleep_time
 
+        self.COLUMNS = COLUMNS
+        self.FK_PARENT = FK_PARENT
+        self.MANUAL_LEVEL = MANUAL_LEVEL
+        self.AUTO_LEVEL = AUTO_LEVEL
+        self.BLANKS = BLANKS
+        self.ENGLISH = ENGLISH
+        self.HANZI = HANZI
+        self.PINYIN = PINYIN
+
     def pinyin_from_hanzi(self, row):
-        nh2 = row['Hanzi']
+        nh2 = row[self.HANZI]
 
         seg_list = jieba.cut(nh2)
         what = " ".join(seg_list)
@@ -38,12 +47,20 @@ class IoHelper(object):
         return pinyin_final.strip()
 
     def manual_level(self, row):
-        return str(int(float(row['Manual_Level'])))
+        return str(int(float(row[self.MANUAL_LEVEL])))
 
     def auto_level(self, row):
         return_level = 100
 
-        hanzi_with_spaces = str(row['Hanzi'])
+        try:
+            current_level = str(row[self.AUTO_LEVEL])
+            verify = int(current_level) > 0
+            return current_level
+        except Exception as e:
+            pass
+
+
+        hanzi_with_spaces = str(row[self.HANZI])
         if ',' in hanzi_with_spaces:
             raise Exception(":{}: has an invalid character".format(hanzi_with_spaces))
         for char_to_remove in ['.', '。', '？', '?']:
@@ -99,7 +116,7 @@ class IoHelper(object):
         raise Exception('Single Char not in HSK list')
 
     def hanzi_with_spaces(self, row):
-        nh2 = row['Hanzi'].replace(' ', '')
+        nh2 = row[self.HANZI].replace(' ', '')
 
         seg_list = jieba.cut(nh2)
         with_spaces = ''
@@ -121,12 +138,13 @@ class IoHelper(object):
         if column_count != 7:
             raise Exception("Columns did not equal 7".format(column_count))
 
-        hanzi_value = row['Hanzi']
+        hanzi_value = row[self.HANZI]
+        pinyin_value = row[self.PINYIN]
         hanzi = hanzi_value.replace(' ', '')
         print('\n{} jason'.format(hanzi))
 
         # TODO: Delete line below...why isn't that working???
-        return hanzi
+        return 'JAF_TEST'
 
         gt_translation = self.googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
         print(gt_translation, flush=True)
@@ -144,8 +162,8 @@ class IoHelper(object):
         return translation_return
 
     def verify_no_new_old_duplicates(self, df_1, df_2):
-        set_1 = set(df_1['Hanzi'].tolist())
-        set_2 = set(df_2['Hanzi'].tolist())
+        set_1 = set(df_1[self.HANZI].tolist())
+        set_2 = set(df_2[self.HANZI].tolist())
 
         if len(set_1.intersection(set_2)) > 0:
             print('\n\nERROR_ERROR_ERROR:\nNew and old sets should not overlap')
@@ -180,4 +198,4 @@ class IoHelper(object):
         assert str(expected_level) == auto_level, auto_level
 
     def autoPackage(self, phrase):
-        return {'Hanzi': phrase, }
+        return {self.HANZI: phrase, }
