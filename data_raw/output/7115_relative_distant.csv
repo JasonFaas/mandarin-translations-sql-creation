@@ -1,0 +1,5 @@
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
+gender.female,5,10,,mother's mother,外婆
+gender.male,5,10,,mother's father,外公
+gender.female,5,10,,father's mother,奶奶
+gender.male,5,10,,fathers's father,爷爷

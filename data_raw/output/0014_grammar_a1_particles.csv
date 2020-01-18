@@ -1,0 +1,7 @@
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
+-1,1,-1,{ref:1;type:gender;specific:female}{ref:2;type:relative_immediate;fk_ref:1},This is my {ref:2},这是我{ref:2},,
+-1,1,-1,{ref:1;type:gender;specific:male}{ref:2;type:relative_immediate;fk_ref:1},This is her {ref:2}'s friend,这是她{ref:2}的朋友,,
+-1,1,-1,{ref:1;type:relative_distant},I am at {ref:1}'s home. What about you?,我在{ref:1}的家;你呢？,,
+-1,1,-1,,Let's go (suggestion),我们走吧,,
+-1,1,-1,{ref:1;type:city_name},Let's go to {ref:1} (suggestion),我们去{ref:1}吧,,
+-1,1,-1,,Boss; can you make it cheaper? (request),老板 ，便宜 一点 吧。,,
