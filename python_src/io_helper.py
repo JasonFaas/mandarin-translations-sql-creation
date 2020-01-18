@@ -60,15 +60,16 @@ class IoHelper(object):
     def auto_level_if_no_level(self, row):
         return_level = 200
 
-        # try:
-        #     current_level = str(row[self.AUTO_LEVEL])
-        #     current_level_int = int(current_level)
-        #     verify = current_level_int > 0
-        #     if current_level_int > 80:
-        #         print("Current level is TDH: {} {}".format(row[self.HANZI], current_level_int))
-        #     return current_level
-        # except Exception as e:
-        #     pass
+        level_too_high_print_notifier = 80
+        try:
+            current_level = str(row[self.AUTO_LEVEL])
+            current_level_int = int(current_level)
+            verify = current_level_int > 0
+            if current_level_int > level_too_high_print_notifier:
+                print("Current level is TDH: {} {}".format(row[self.HANZI], current_level_int))
+            return current_level
+        except Exception as e:
+            pass
 
         base_hanzi = str(row[self.HANZI])
         hanzi_with_spaces = self.remove_non_hanzi_chars(base_hanzi)
@@ -106,6 +107,9 @@ class IoHelper(object):
             else:
                 level_list_val += 5
             return_level = level_list_val
+
+        if current_level_int > level_too_high_print_notifier:
+            print("Current level is TDH: {} {}".format(row[self.HANZI], current_level_int))
         return str(return_level)
 
     def remove_blanks_and_constant_to_level(self, hanzi_with_spaces, blank_level):
@@ -130,14 +134,18 @@ class IoHelper(object):
             raise Exception(":{}: has an invalid character".format(hanzi_with_spaces))
 
     def get_word_hsk_level(self, without_spaces):
-        for hsk_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
-            if without_spaces in self.hsk_word_list[hsk_level]:
-                return hsk_level
+        try:
+            int_val = int(without_spaces)
+            return min(7, max(1, len(without_spaces) - 1))
+        except Exception as e:
+            for hsk_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
+                if without_spaces in self.hsk_word_list[hsk_level] or without_spaces in self.jaf_word_list[hsk_level]:
+                    return hsk_level
         raise Exception('Word not in HSK list')
 
     def get_char_hsk_level(self, single_hanzi):
         for hsk_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
-            if single_hanzi in self.hsk_char_list[hsk_level]:
+            if single_hanzi in self.hsk_char_list[hsk_level] or single_hanzi in self.jaf_char_list[hsk_level]:
                 return hsk_level
         raise Exception('Single Char not in HSK list')
 
