@@ -43,7 +43,7 @@ output_file_names.sort()
 print("Sleep each translation for {} seconds.".format(sleep_time))
 
 for filename in output_file_names:
-    print('\nWorking with {}'.format(filename))
+    # print('\nWorking with {}'.format(filename))
     output_csv_filename = '{}{}'.format(OUTPUT_PATH, filename)
 
     # read in output

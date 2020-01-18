@@ -20,6 +20,8 @@ class IoHelper(object):
         self.googletrans_translator = Translator()
         self.hsk_word_list = {}
         self.hsk_char_list = {}
+        self.jaf_word_list = {}
+        self.jaf_char_list = {}
         self.sleep_time = sleep_time
 
         self.COLUMNS = COLUMNS
@@ -62,7 +64,7 @@ class IoHelper(object):
         #     current_level = str(row[self.AUTO_LEVEL])
         #     current_level_int = int(current_level)
         #     verify = current_level_int > 0
-        #     if current_level_int > 50:
+        #     if current_level_int > 80:
         #         print("Current level is TDH: {} {}".format(row[self.HANZI], current_level_int))
         #     return current_level
         # except Exception as e:
@@ -226,6 +228,13 @@ class IoHelper(object):
             content = [x.strip() for x in content]
             self.hsk_word_list[hsk_level] = content
             self.hsk_char_list[hsk_level] = ''.join(content)
+
+        for jaf_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
+            with open('../hsk_list/JAF_{}.txt'.format(jaf_level), mode='r', encoding='utf-8-sig') as fp:
+                content = fp.readlines()
+            content = [x.strip() for x in content]
+            self.jaf_word_list[jaf_level] = content
+            self.jaf_char_list[jaf_level] = ''.join(content)
 
     def runUnitTests(self):
         assert str(10) == self.manual_level({'Manual_Level': 10.0, })
