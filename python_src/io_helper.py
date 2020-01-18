@@ -108,8 +108,8 @@ class IoHelper(object):
                 level_list_val += 5
             return_level = level_list_val
 
-        if current_level_int > level_too_high_print_notifier:
-            print("Current level is TDH: {} {}".format(row[self.HANZI], current_level_int))
+        if return_level > level_too_high_print_notifier:
+            print("Return level is TDH: {} {}".format(row[self.HANZI], current_level_int))
         return str(return_level)
 
     def remove_blanks_and_constant_to_level(self, hanzi_with_spaces, blank_level):
