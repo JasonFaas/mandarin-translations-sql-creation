@@ -1,7 +1,7 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,5,15,,museum,博物馆,bówùguǎn,
--1,5,12,,restaurant,餐厅,cāntīng,
--1,5,8,,university,大学,dàxué,
--1,5,15,,bar,酒吧,jiǔbā,
--1,5,20,,theater,剧院,jùyuàn,
--1,5,12,,city,市,shì,
+-1,5,50,,museum,博物馆,bówùguǎn,
+-1,5,40,,restaurant,餐厅,cāntīng,
+-1,5,12,,university,大学,dàxué,
+-1,5,50,,bar,酒吧,jiǔbā,
+-1,5,30,,theater,剧院,jùyuàn,
+-1,5,18,,city,市,shì,

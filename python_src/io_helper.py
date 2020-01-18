@@ -11,6 +11,11 @@ MAX_HSK_LEVEL_PLUS_ONE = 7 + 1
 
 class IoHelper(object):
 
+    BASE_HSK_MULTI = 10
+    HSK_WORD_ADD_MULTI = 5
+    BLANK_MULTI = 7
+    HSK_CHAR_MULTI = 6
+
     def __init__(self, sleep_time, COLUMNS, FK_PARENT, MANUAL_LEVEL, AUTO_LEVEL, BLANKS, ENGLISH, HANZI, PINYIN, PINYIN_2):
         self.googletrans_translator = Translator()
         self.hsk_word_list = {}
@@ -51,49 +56,46 @@ class IoHelper(object):
         return str(int(float(row[self.MANUAL_LEVEL])))
 
     def auto_level_if_no_level(self, row):
-        return_level = 100
+        return_level = 200
 
-        try:
-            current_level = str(row[self.AUTO_LEVEL])
-            verify = int(current_level) > 0
-            return current_level
-        except Exception as e:
-            pass
+        # try:
+        #     current_level = str(row[self.AUTO_LEVEL])
+        #     current_level_int = int(current_level)
+        #     verify = current_level_int > 0
+        #     if current_level_int > 50:
+        #         print("Current level is TDH: {} {}".format(row[self.HANZI], current_level_int))
+        #     return current_level
+        # except Exception as e:
+        #     pass
 
+        base_hanzi = str(row[self.HANZI])
+        hanzi_with_spaces = self.remove_non_hanzi_chars(base_hanzi)
+        self.confirm_hanzi_has_no_comma(hanzi_with_spaces)
 
-        hanzi_with_spaces = str(row[self.HANZI])
-        if ',' in hanzi_with_spaces:
-            raise Exception(":{}: has an invalid character".format(hanzi_with_spaces))
-        for char_to_remove in ['.', '。', '？', '?']:
-            hanzi_with_spaces = hanzi_with_spaces.replace(char_to_remove, '')
         without_spaces = hanzi_with_spaces.replace(' ', '')
 
         try:
             hsk_level = self.get_word_hsk_level(without_spaces)
-            return_level = hsk_level * 3
+            return_level = hsk_level * self.BASE_HSK_MULTI
         except Exception as e:
             auto_level = 0
-            while '{' in hanzi_with_spaces:
-                auto_level += 5
-                open_index = max(hanzi_with_spaces.index('{') - 1, 0)
-                close_index = min(hanzi_with_spaces.index('}') + 1, len(hanzi_with_spaces))
-                hanzi_with_spaces = hanzi_with_spaces[:open_index] + hanzi_with_spaces[close_index:]
-                hanzi_with_spaces = hanzi_with_spaces.strip()
+            level_increase, hanzi_with_spaces = self.remove_blanks_and_constant_to_level(hanzi_with_spaces,
+                                                                                         blank_level=self.BLANK_MULTI)
+            auto_level += level_increase
 
             word_split = hanzi_with_spaces.split(' ')
             level_list = []
             for word in word_split:
                 try:
                     level = self.get_word_hsk_level(word)
-                    level_list.append(level * 2)
+                    level_list.append(level * self.HSK_WORD_ADD_MULTI)
                 except Exception as e:
                     try:
                         for single_char in word:
                             level = self.get_char_hsk_level(single_char)
-                            level_list.append(level * 4)
+                            level_list.append(level * self.HSK_CHAR_MULTI)
                     except Exception as e:
-                        level_list.append(100)
-
+                        level_list.append(200)
 
             level_list_val = auto_level
 
@@ -103,6 +105,27 @@ class IoHelper(object):
                 level_list_val += 5
             return_level = level_list_val
         return str(return_level)
+
+    def remove_blanks_and_constant_to_level(self, hanzi_with_spaces, blank_level):
+        auto_level = 0
+        while '{' in hanzi_with_spaces:
+            auto_level += blank_level
+            open_index = max(hanzi_with_spaces.index('{') - 1, 0)
+            close_index = min(hanzi_with_spaces.index('}') + 1, len(hanzi_with_spaces))
+            hanzi_with_spaces = hanzi_with_spaces[:open_index] + hanzi_with_spaces[close_index:]
+            hanzi_with_spaces = hanzi_with_spaces.strip()
+
+        return auto_level, hanzi_with_spaces
+
+    def remove_non_hanzi_chars(self, hanzi_with_spaces):
+        new_str = str(hanzi_with_spaces)
+        for char_to_remove in ['.', '。', '？', '?']:
+            new_str = new_str .replace(char_to_remove, '')
+        return new_str
+
+    def confirm_hanzi_has_no_comma(self, hanzi_with_spaces):
+        if ',' in hanzi_with_spaces:
+            raise Exception(":{}: has an invalid character".format(hanzi_with_spaces))
 
     def get_word_hsk_level(self, without_spaces):
         for hsk_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
@@ -162,13 +185,11 @@ class IoHelper(object):
         hanzi_value = row[self.HANZI]
         pinyin_value = row[self.PINYIN]
         hanzi = hanzi_value.replace(' ', '')
-        print('\n{} {} jason'.format(hanzi, pinyin_value))
 
-        if pinyin_value and isinstance(pinyin_value, str) and len(pinyin_value) > 0:
+        if pinyin_value and isinstance(pinyin_value, str) and len(pinyin_value) > 0 and pinyin_value != 'JAF_Test':
             return pinyin_value
 
-        # TODO: Delete line below...why isn't that working???
-        return 'JAF_Test'
+        print('\nPinyin from hanzi for {}'.format(hanzi))
 
         time.sleep(self.sleep_time)
 
@@ -213,16 +234,17 @@ class IoHelper(object):
         assert str(10) == self.manual_level({'Manual_Level': '10', })
 
 
-        self.test_auto_level_phrase_and_expected('爸爸', 1 * 3)
-        self.test_auto_level_phrase_and_expected('爸爸 和 妈妈', (1 + 1 + 1) * 2)
+        self.test_auto_level_phrase_and_expected('爸爸', 1 * self.BASE_HSK_MULTI, 10)
+        self.test_auto_level_phrase_and_expected('爸爸 和 妈妈', (1 + 1 + 1) * self.HSK_WORD_ADD_MULTI, 15)
+        self.test_auto_level_phrase_and_expected('你 好', 2 * 1 * self.HSK_WORD_ADD_MULTI, 10)
+        self.test_auto_level_phrase_and_expected('你好', 2 * 1 * self.HSK_CHAR_MULTI, 12)
         self.test_auto_level_phrase_and_expected('{ref:0;example:exampless} 我 最 喜欢 的 {ref:1;type:food_type} 是 {ref:2;type:food;fk_ref:1}',
-                                                 (3 * 5 + ((1 * 4) + 2) * 2))
-        self.test_auto_level_phrase_and_expected('你 好', 2 + 2)
-        self.test_auto_level_phrase_and_expected('你好', 4 + 4)
+                                                 (3 * self.BLANK_MULTI + ((1 * 4 + 2) * self.HSK_WORD_ADD_MULTI)), 51)
 
-    def test_auto_level_phrase_and_expected(self, phrase, expected_level):
+    def test_auto_level_phrase_and_expected(self, phrase, expected_level_formula, expected_level_raw):
+        assert expected_level_formula == expected_level_raw, '{} {}'.format(expected_level_formula, expected_level_raw)
         auto_level = self.auto_level_if_no_level(self.autoPackage(phrase))
-        assert str(expected_level) == auto_level, auto_level
+        assert str(expected_level_formula) == auto_level, auto_level
 
     def autoPackage(self, phrase):
         return {self.HANZI: phrase, }

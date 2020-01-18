@@ -1,4 +1,4 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,5,3,,Today,今天,jīntiān,
--1,5,3,,Tomorrow,明天,míngtiān,
--1,5,3,,Yesterday,昨天,zuótiān,
+-1,5,10,,Today,今天,jīntiān,
+-1,5,10,,Tomorrow,明天,míngtiān,
+-1,5,10,,Yesterday,昨天,zuótiān,
