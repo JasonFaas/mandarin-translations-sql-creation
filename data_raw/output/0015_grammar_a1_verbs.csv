@@ -1,2 +1,6 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,5,29,{ref:1;type:int;min:2;max:99999}{ref:2;type:food},I have {ref:1} {ref:2}s,我 有 {ref:1} 个 {ref:2},wǒ yǒu {ref:1} gè {ref:2},
+-1,5,-1,,Is there a television in your home?,你家有电视吗？,
+-1,5,-1,{ref:1;type:gender;specific:male}{ref:2;type:common_name;fk_ref:1},His name is {ref:2},他叫{ref:2}
+-1,5,-1,{ref:1;type:gender;specific:female}{ref:2;type:common_name;fk_ref:1},Her name is {ref:2},她叫{ref:2}
+-1,5,-1,{ref:1;type:place_type},Tonight we are going to the {ref:1}. Are you going?,晚上我们去{ref:1}。你去吗？
