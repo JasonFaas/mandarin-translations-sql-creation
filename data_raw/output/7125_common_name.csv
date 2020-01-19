@@ -1,6 +1,6 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
-gender.female,5,-1,,Liu Yifei,刘亦菲
-gender.male,5,-1,,Xi Jinping,习近平
-gender.male,5,-1,,Jet Li,李连杰
-gender.male,5,-1,,Donnie Yen,甄子丹
-gender.male,5,-1,,Bruce Lee,李小龙
+gender.female,5,200,,Liu Yifei,刘亦菲,liúyìfēi,
+gender.male,5,36,,Xi Jinping,习近平,xíjìnpíng,
+gender.male,5,78,,Jet Li,李连杰,lǐliánjié,
+gender.male,5,200,,Donnie Yen,甄子丹,zhēnzidān,
+gender.male,5,54,,Bruce Lee,李小龙,lǐxiǎolóng,

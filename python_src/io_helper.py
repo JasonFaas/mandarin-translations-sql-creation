@@ -64,10 +64,10 @@ class IoHelper(object):
         try:
             current_level = str(row[self.AUTO_LEVEL])
             current_level_int = int(current_level)
-            verify = current_level_int > 0
-            if current_level_int > level_too_high_print_notifier:
-                print("Current level is TDH: {} {}".format(row[self.HANZI], current_level_int))
-            return current_level
+            if current_level_int > 0:
+                if current_level_int > level_too_high_print_notifier:
+                    print("Current level is TDH: {} {}".format(row[self.HANZI], current_level_int))
+                return current_level
         except Exception as e:
             pass
 
@@ -109,7 +109,7 @@ class IoHelper(object):
             return_level = level_list_val
 
         if return_level > level_too_high_print_notifier:
-            print("Return level is TDH: {} {}".format(row[self.HANZI], current_level_int))
+            print("Return level is TDH: {} {}".format(row[self.HANZI], return_level))
         return str(return_level)
 
     def remove_blanks_and_constant_to_level(self, hanzi_with_spaces, blank_level):
@@ -204,19 +204,27 @@ class IoHelper(object):
         time.sleep(self.sleep_time)
 
         gt_translation = self.googletrans_translator.translate(hanzi, src='zh-cn', dest='en')
-        print(gt_translation, flush=True)
-        print(gt_translation.extra_data, flush=True)
-        print(gt_translation.origin, ' -> ', gt_translation.text, flush=True)
-        translation_ = gt_translation.extra_data['translation']
-        if len(translation_) < 2:
-            return 'JAF_Error'
-        translation__ = translation_[1]
-        translation___ = translation__[-1]
-        translation_return = translation___.lower()
-        # print(gt_translation.origin, ' -> ', translation_return)
-        # print('\n', flush=True)
+        # print(gt_translation, flush=True)
+        # print(gt_translation.extra_data, flush=True)
+        # print(gt_translation.origin, ' -> ', gt_translation.text, flush=True)
+        translation_extra_data = gt_translation.extra_data['translation']
+        print(translation_extra_data)
 
-        return translation_return
+        return self.get_pinyin_from_translation_extra_data(translation_extra_data)
+
+    def get_pinyin_from_translation_extra_data(self, translation_extra_data):
+        if len(translation_extra_data) < 2:
+            return 'JAF_Error_too_little {}'.format(translation_extra_data)
+        try:
+            translation_extra_data_2nd = translation_extra_data[-1]
+            translation_extra_data_2nd_negative1 = translation_extra_data_2nd[-1]
+            translation_return = translation_extra_data_2nd_negative1.lower()
+            # print(gt_translation.origin, ' -> ', translation_return)
+            # print('\n', flush=True)
+            return translation_return
+        except Exception as e:
+            print(e)
+            return 'JAF_Error_something {}'.format(translation_extra_data)
 
     # TODO: Supposed to update this to output-only paradigm
     # def verify_no_new_old_duplicates(self, df_1, df_2):
@@ -245,6 +253,8 @@ class IoHelper(object):
             self.jaf_char_list[jaf_level] = ''.join(content)
 
     def runUnitTests(self):
+        assert self.get_pinyin_from_translation_extra_data([['In the evening we go to {ref: 1}. ', '晚上我们去{ref:1}。', None, None, 0], ['are you going?', '你去吗？', None, None, 1], [None, None, None, 'Wǎnshàng wǒmen qù {ref:1}. Nǐ qù ma?']]) == 'Wǎnshàng wǒmen qù {ref:1}. Nǐ qù ma?'
+
         assert str(10) == self.manual_level({'Manual_Level': 10.0, })
         assert str(10) == self.manual_level({'Manual_Level': 10, })
         assert str(10) == self.manual_level({'Manual_Level': '10.0', })

@@ -1,6 +1,6 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,8,-1,,Hong Kong,香港,
--1,8,-1,,Beijing,北京,
--1,8,-1,,Xi'an,北京,
--1,6,-1,,San Francisco,旧金山,
--1,6,-1,,Chengdu,成都,
+-1,8,54,,Hong Kong,香港,xiānggǎng,
+-1,8,10,,Beijing,北京,běijīng,
+-1,8,10,,Xi'an,北京,běijīng,
+-1,6,60,,San Francisco,旧金山,jiùjīnshān,
+-1,6,24,,Chengdu,成都,chéngdū,
