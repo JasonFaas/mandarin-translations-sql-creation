@@ -253,7 +253,11 @@ class IoHelper(object):
             self.jaf_char_list[jaf_level] = ''.join(content)
 
     def runUnitTests(self):
-        assert self.get_pinyin_from_translation_extra_data([['In the evening we go to {ref: 1}. ', '晚上我们去{ref:1}。', None, None, 0], ['are you going?', '你去吗？', None, None, 1], [None, None, None, 'Wǎnshàng wǒmen qù {ref:1}. Nǐ qù ma?']]) == 'Wǎnshàng wǒmen qù {ref:1}. Nǐ qù ma?'
+        data = self.get_pinyin_from_translation_extra_data(
+            [['In the evening we go to {ref: 1}. ', '晚上我们去{ref:1}。', None, None, 0],
+             ['are you going?', '你去吗？', None, None, 1], [None, None, None, 'Wǎnshàng wǒmen qù {ref:1}. Nǐ qù ma?']])
+
+        assert data == 'wǎnshàng wǒmen qù {ref:1}. nǐ qù ma?', data
 
         assert str(10) == self.manual_level({'Manual_Level': 10.0, })
         assert str(10) == self.manual_level({'Manual_Level': 10, })
