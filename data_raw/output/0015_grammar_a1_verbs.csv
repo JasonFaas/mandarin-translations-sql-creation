@@ -4,3 +4,4 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,5,-1,{ref:1;type:gender;specific:male}{ref:2;type:common_name;fk_ref:1},His name is {ref:2},他叫{ref:2}
 -1,5,-1,{ref:1;type:gender;specific:female}{ref:2;type:common_name;fk_ref:1},Her name is {ref:2},她叫{ref:2}
 -1,5,-1,{ref:1;type:place_type},Tonight we are going to the {ref:1}. Are you going?,晚上我们去{ref:1}。你去吗？
+-1,5,-1,{ref:1;type:surname},His girlfriend's last name is {ref:1}.,他女朋友姓{ref:1}。
