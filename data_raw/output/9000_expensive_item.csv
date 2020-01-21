@@ -1,6 +1,6 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,-1,-1,,cell phone,手机,
--1,-1,-1,,television,电视,
--1,-1,-1,,laptop,电脑,
--1,-1,-1,,plane ticket,飞机票,
--1,-1,-1,,bicycle,自行车,
+-1,-1,20,,cell phone,手机,shǒujī,
+-1,-1,10,,television,电视,diànshì,
+-1,-1,10,,laptop,电脑,diànnǎo,
+-1,-1,24,,plane ticket,飞机票,fēijī piào,
+-1,-1,30,,bicycle,自行车,zìxíngchē,
