@@ -42,6 +42,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,2,20,,,火车站,huǒchēzhàn,
 -1,2,20,,,机场,jīchǎng,
 -1,2,20,,,鸡蛋,jīdàn,
+-1,2,20,,,鸡,jī,JAF
 -1,2,20,,,件,jiàn,
 -1,2,20,,,教室,jiàoshì,
 -1,2,20,,,姐姐,jiějie,
@@ -74,6 +75,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,2,20,,,男,nán,
 -1,2,20,,,您,nín,
 -1,2,20,,,牛奶,niúnǎi,
+-1,2,20,,,牛,niú,JAF
 -1,2,20,,,女,nǚ,
 -1,2,20,,,旁边,pángbiān,
 -1,2,20,,,跑步,pǎobù,
@@ -123,6 +125,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,2,20,,,颜色,yánsè,
 -1,2,20,,,眼睛,yǎnjing,
 -1,2,20,,,羊肉,yángròu,
+-1,2,20,,,肉,ròu,JAF
 -1,2,20,,,药,yào,
 -1,2,20,,,要,yào,
 -1,2,20,,,也,yě,

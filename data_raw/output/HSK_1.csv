@@ -34,6 +34,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,1,10,,,工作,gōngzuò,
 -1,1,10,,,狗,gǒu,
 -1,1,10,,,汉语,hànyǔ,
+-1,1,10,,,语,yǔ,
 -1,1,10,,,好,hǎo,
 -1,1,10,,,号,hào,
 -1,1,10,,,喝,hē,
@@ -46,6 +47,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,1,10,,,家,jiā,
 -1,1,10,,,叫,jiào,
 -1,1,10,,,今天,jīntiān,
+-1,1,10,,,今,jīn,JAF
 -1,1,10,,,九,jiǔ,
 -1,1,10,,,开,kāi,
 -1,1,10,,,看,kàn,
@@ -63,6 +65,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,1,10,,,猫,māo,
 -1,1,10,,,没关系,méiguānxi,
 -1,1,10,,,没有,méiyǒu,
+-1,1,10,,,没,méi,JAF
 -1,1,10,,,米饭,mǐfàn,
 -1,1,10,,,名字,míngzi,
 -1,1,10,,,明天,míngtiān,
@@ -127,6 +130,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,1,10,,,星期,xīngqī,
 -1,1,10,,,学生,xuésheng,
 -1,1,10,,,学习,xuéxí,
+-1,1,10,,,学,xué,
 -1,1,10,,,学校,xuéxiào,
 -1,1,10,,,一,yī,
 -1,1,10,,,一点儿,yìdiǎnr,
