@@ -24,7 +24,10 @@ class DbHelper(object):
 
         db_in_mem = {}
 
-        for file_idx, filename in enumerate(output_file_names):
+        for filename in output_file_names:
+            if filename[0] == '-':
+                continue
+            print('Writing to {}'.format(filename))
             is_input_to_primary_table = filename[0] == '0'
             is_hsk_file = 'HSK_' == filename[:4]
 
@@ -32,14 +35,13 @@ class DbHelper(object):
 
             if is_input_to_primary_table:
                 table_name = 'translations'
-                create_new_table = file_idx == 0
+                create_new_table = '0000' == filename[0:4]
             elif is_hsk_file:
                 table_name = 'hsk'
                 create_new_table = 'HSK_1.csv' == filename
             else:
                 table_name = filename[filename.index('_') + 1:filename.index('.')]
                 create_new_table = True
-
 
             output_csv_filename = '{}{}'.format(self.OUTPUT_PATH, filename)
             with open(output_csv_filename, 'rt') as fin:  # `with` statement available in 2.5+
@@ -50,7 +52,6 @@ class DbHelper(object):
                 # print('\n')
                 # for what in dr:
                 #     print(what)
-
 
                 to_db = [
                     (
@@ -85,7 +86,7 @@ class DbHelper(object):
                     to_db[idx] = (db_in_mem[ref_split[0]][ref_split[1]] + 1,) + to_db[idx][1:]
 
             if create_new_table:
-
+                print("Creating new table {}".format(table_name))
                 # TODO: Be careful here with `self.COLUMNS[:3]:`
                 # TODO: Clean this up!!!
 
