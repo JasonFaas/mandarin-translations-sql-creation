@@ -153,7 +153,7 @@ class IoHelper(object):
         pinyin_value = row[self.PINYIN]
 
         try:
-            if pinyin_value and pinyin_value is str and len(pinyin_value) > 0:
+            if pinyin_value and isinstance(pinyin_value, str) and len(pinyin_value) > 0:
                 return row[self.HANZI]
         except Exception as e:
             print('Jason')
@@ -210,7 +210,12 @@ class IoHelper(object):
         translation_extra_data = gt_translation.extra_data['translation']
         print(translation_extra_data)
 
-        return self.get_pinyin_from_translation_extra_data(translation_extra_data)
+        data = self.get_pinyin_from_translation_extra_data(translation_extra_data)
+        if data.count(' ') != hanzi_value.count(' '):
+            print("Spaces don't match {} :: {}".format(data, hanzi_value))
+            exit(0)
+
+        return data
 
     def get_pinyin_from_translation_extra_data(self, translation_extra_data):
         if len(translation_extra_data) < 2:
