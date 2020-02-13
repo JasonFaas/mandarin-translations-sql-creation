@@ -44,27 +44,16 @@ class DbHelper(object):
                 create_new_table = True
 
             output_csv_filename = '{}{}'.format(self.OUTPUT_PATH, filename)
-            with open(output_csv_filename, 'rt') as fin:  # `with` statement available in 2.5+
+            with open(output_csv_filename, 'rt', encoding="utf-8") as fin:  # `with` statement available in 2.5+
                 # csv.DictReader uses first line in file for column headings by default
                 dr = csv.DictReader(fin)  # comma is default delimiter
 
-                # TODO: Fix bug here, but trying to get through a few things first
-                # print('\n')
-                # for what in dr:
-                #     print(what)
-
-                to_db = [
-                    (
-                        i[('%s' % self.COLUMNS[0])],
-                        i[('%s' % self.COLUMNS[1])],
-                        i[('%s' % self.COLUMNS[2])],
-                        i[('%s' % self.COLUMNS[3])],
-                        i[('%s' % self.COLUMNS[4])],
-                        i[('%s' % self.COLUMNS[5])],
-                        i[('%s' % self.COLUMNS[6])],
-                        i[('%s' % self.COLUMNS[7])],
-                    )
-                    for i in dr]
+                to_db = []
+                for what in dr:
+                    list_to_add = []
+                    for clm in self.COLUMNS:
+                        list_to_add.append(what[clm])
+                    to_db.append(tuple(list_to_add))
 
             if not is_input_to_primary_table:
                 db_in_mem[table_name] = {}
