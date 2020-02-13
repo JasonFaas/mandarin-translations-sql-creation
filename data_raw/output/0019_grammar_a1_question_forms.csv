@@ -15,6 +15,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,1,27,,When will you return?,什么 时候 你 回来,shénme shíhòu nǐ huílái,
 -1,23,42,,When does your all's airplane arrive?,你们 的 飞机 什么 时候 到,nǐmen de fēijī shénme shíhòu dào,
 -1,23,30,,Why were you not here at noon?,你 中午 为什么 不 在,nǐ zhōngwǔ wèishéme bù zài,
+-1,23,39,{ref:1;type:purchased_items},Why do you buy so many {ref:1}?,你 为什么 买 很多 {ref:1},nǐ wèishéme mǎi hěnduō {ref:1},
 -1,23,25,,How are you going to go to work?,你 怎么 去 上班,nǐ zěnme qù shàngbān,
 -1,23,17,{ref:1;type:weather_noun},Is it raining today,今天 {ref:1} 吗,jīntiān {ref:1} ma,
 -1,23,50,{ref:1;type:pronoun},Don't tell {ref:1}; okay?,不要 告诉 {ref:1} ; 好 吗,bùyào gàosù {ref:1} ; hǎo ma,
