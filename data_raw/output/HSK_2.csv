@@ -56,6 +56,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,2,20,,,考试,kǎoshì,
 -1,2,20,,,可能,kěnéng,
 -1,2,20,,,可以,kěyǐ,
+-1,2,20,,,可,kě,JAF
 -1,2,20,,,课,kè,
 -1,2,20,,,快,kuài,
 -1,2,20,,,快乐,kuàilè,
@@ -75,6 +76,7 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,2,20,,,男,nán,
 -1,2,20,,,您,nín,
 -1,2,20,,,牛奶,niúnǎi,
+-1,2,20,,,奶,nǎi,JAF
 -1,2,20,,,牛,niú,JAF
 -1,2,20,,,女,nǚ,
 -1,2,20,,,旁边,pángbiān,
