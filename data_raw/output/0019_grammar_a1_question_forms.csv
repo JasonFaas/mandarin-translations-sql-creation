@@ -1,7 +1,7 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,3,45,{ref:1;type:hobby},Is {ref:1} difficult,{ref:1} 容 不 容易,{ref:1} róng bù róngyì,
 -1,23,26,,Is she pretty?,他 是 漂 不 漂亮,tā shì piào bù piàoliang,
--1,23,26,{ref:1;type:day_relative}{ref:2;type:weather_adjective},Is {ref:1}'s weather {ref:2}?,{ref:1} 天气 {ref:2} 不 {ref:2},{ref:1} tiānqì {ref:2} bù {ref:2},
+-1,23,31,{ref:1;type:day_relative}{ref:2;type:weather_adjective},Is {ref:1}'s weather {ref:2}?,{ref:1} 天气 {ref:2} 不 {ref:2},{ref:1} tiānqì {ref:2} bù {ref:2},
 -1,23,15,,Who are you?,你 是 谁,nǐ shì shéi,
 -1,23,23,,What is this?,这 是什么,zhè shì shénme,
 -1,23,20,,What kind of food do you like?,你 喜欢 什么 菜,nǐ xǐhuān shénme cài,
@@ -17,6 +17,6 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,23,30,,Why were you not here at noon?,你 中午 为什么 不 在,nǐ zhōngwǔ wèishéme bù zài,
 -1,23,25,,How are you going to go to work?,你 怎么 去 上班,nǐ zěnme qù shàngbān,
 -1,23,17,{ref:1;type:weather_noun},Is it raining today,今天 {ref:1} 吗,jīntiān {ref:1} ma,
--1,23,245,{ref:1;type:pronoun},Don't tell {ref:1}; okay?,不要 告诉 {ref:1} ; 好 吗,bùyào gàosù {ref:1} ; hǎo ma,
--1,23,253,{ref:1;type:acquaintance},You have met my {ref:1}; right?,你 见 过 我 的 {ref:1} ; 对 吗,nǐ jiàn guò wǒ de {ref:1} ; duì ma,
--1,5,238,,Mister; want-not-want rice?,先生 ; 要 不要 米饭,xiānshēng ; yào bùyào mǐfàn,
+-1,23,50,{ref:1;type:pronoun},Don't tell {ref:1}; okay?,不要 告诉 {ref:1} ; 好 吗,bùyào gàosù {ref:1} ; hǎo ma,
+-1,23,58,{ref:1;type:acquaintance},You have met my {ref:1}; right?,你 见 过 我 的 {ref:1} ; 对 吗,nǐ jiàn guò wǒ de {ref:1} ; duì ma,
+-1,5,43,,Mister; want-not-want rice?,先生 ; 要 不要 米饭,xiānshēng ; yào bùyào mǐfàn,

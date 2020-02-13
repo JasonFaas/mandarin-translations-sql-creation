@@ -67,7 +67,7 @@ class IoHelper(object):
             if current_level_int > 0:
                 if current_level_int > level_too_high_print_notifier:
                     print("Current level is TDH: {} {}".format(row[self.HANZI], current_level_int))
-                return current_level
+                return current_level  # Comment this line to force recalculate
         except Exception as e:
             pass
 
@@ -135,13 +135,16 @@ class IoHelper(object):
 
     def get_word_hsk_level(self, without_spaces):
         try:
-            int_val = int(without_spaces)
-            return min(7, max(1, len(without_spaces) - 1))
+            return self.get_number_hsk_level(without_spaces)
         except Exception as e:
             for hsk_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
                 if without_spaces in self.hsk_word_list[hsk_level] or without_spaces in self.jaf_word_list[hsk_level]:
                     return hsk_level
         raise Exception('Word not in HSK list')
+
+    def get_number_hsk_level(self, without_spaces):
+        int_val = int(without_spaces)
+        return min(7, max(1, len(without_spaces) - 1))
 
     def get_char_hsk_level(self, single_hanzi):
         for hsk_level in range(1, MAX_HSK_LEVEL_PLUS_ONE):
