@@ -1,0 +1,5 @@
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
+-1,100,12,{ref:1;type:drink},to drink {ref:1},喝 {ref:1},hē {ref:1},
+-1,100,40,,smoking (cigarettes),抽烟,chōuyān,
+-1,100,40,,traveling,旅行,lǚxíng,
+-1,100,12,{ref:1;type:hobby},{ref:1},{ref:1},{ref:1},

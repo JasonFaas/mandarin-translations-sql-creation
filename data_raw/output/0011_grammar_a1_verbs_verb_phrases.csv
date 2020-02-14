@@ -1,0 +1,4 @@
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
+-1,100,37,{ref:1;type:activities_verb},How did you know I like to {ref:1},你 怎么 知道 我 喜欢 {ref:1},nǐ zěnme zhīdào wǒ xǐhuān {ref:1},
+-1,100,22,{ref:1;type:meal_time_of_day},I didn't eat {ref:1},我 没有 吃 {ref:1},wǒ méiyǒu chī {ref:1},
+-1,100,53,{ref:1;type:activity_rude_meeting},During class; don't {ref:1},上课 的 时候 不要 {ref:1},shàngkè de shíhòu bùyào {ref:1},

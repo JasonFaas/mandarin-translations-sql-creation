@@ -53,6 +53,8 @@ for filename in output_file_names:
     # TODO: Update verification that there no 2 hanzi are same
     # ioHelper.verify_no_new_old_duplicates(df_new_input, df_existing_output)
 
+    print(df_output.iloc[0])
+
     df_output[HANZI] = df_output.apply(lambda row: ioHelper.spaces_for_hanzi_if_no_pinyin(row), axis=1)
 
     df_output[PINYIN] = df_output.apply(lambda row: ioHelper.pinyin_from_hanzi_googletrans_if_no_pinyin(row), axis=1)

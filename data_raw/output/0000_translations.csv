@@ -3,4 +3,3 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,100,30,,Can you help me?,你 能 帮助 我 吗,nǐ néng bāngzhù wǒ ma,
 -1,100,44,{ref:1;type:food_type}{ref:2;type:food;fk_ref:1},My favorite {ref:1} is {ref:2},我 最 喜欢 的 {ref:1} 是 {ref:2},wǒ zuì xǐhuān de {ref:1} shì {ref:2},
 -1,100,17,{ref:1;type:relative_immediate},{ref:1} is watching a movie,{ref:1} 看 电影,{ref:1} kàn diànyǐng,
--1,100,24,{ref:1;type:drink},I drank {ref:1},我 喝 {ref:1}了,wǒ hē {ref:1}le,
