@@ -1,2 +1,2 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
-1,5,31,{ref:1;type:written_language}{ref:2;type:written_language;ref_not:1},I read {ref:1} and {ref:2},我读 {ref:1} 和 {ref:2},wǒ dú {ref:1} hé {ref:2},
+1,100,31,{ref:1;type:written_language}{ref:2;type:written_language;ref_not:1},I read {ref:1} and {ref:2},我读 {ref:1} 和 {ref:2},wǒ dú {ref:1} hé {ref:2},

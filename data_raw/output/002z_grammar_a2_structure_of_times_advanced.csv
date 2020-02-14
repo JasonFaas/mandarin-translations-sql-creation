@@ -1,2 +1,2 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,1,44,{ref:1;type:int;min:1;max:12}{ref:2;type:int;min:1;max:9},{ref:1}:0{ref:2} pm TODO_Fix_this_pm_am,晚上 {ref:1} 点 零 {ref:2} 分钟,wǎnshàng {ref:1} diǎn líng {ref:2} fēnzhōng,
+-1,100,44,{ref:1;type:int;min:1;max:12}{ref:2;type:int;min:1;max:9},{ref:1}:0{ref:2} pm TODO_Fix_this_pm_am,晚上 {ref:1} 点 零 {ref:2} 分钟,wǎnshàng {ref:1} diǎn líng {ref:2} fēnzhōng,

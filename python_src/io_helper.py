@@ -55,7 +55,8 @@ class IoHelper(object):
         return pinyin_final.strip()
 
     def manual_level(self, row):
-        return str(-1)
+        # return str(int(float(row[self.MANUAL_LEVEL])))
+        return str(int(100))
 
     def auto_level_if_no_level(self, row):
         return_level = 200
@@ -267,10 +268,10 @@ class IoHelper(object):
 
         assert data == 'wǎnshàng wǒmen qù {ref:1}. nǐ qù ma?', data
 
-        assert str(10) == self.manual_level({'Manual_Level': 10.0, })
-        assert str(10) == self.manual_level({'Manual_Level': 10, })
-        assert str(10) == self.manual_level({'Manual_Level': '10.0', })
-        assert str(10) == self.manual_level({'Manual_Level': '10', })
+        assert str(100) == self.manual_level({'Manual_Level': 100.0, })
+        assert str(100) == self.manual_level({'Manual_Level': 100, })
+        assert str(100) == self.manual_level({'Manual_Level': '100.0', })
+        assert str(100) == self.manual_level({'Manual_Level': '100', })
 
 
         self.test_auto_level_phrase_and_expected('爸爸', 1 * self.BASE_HSK_MULTI, 10)

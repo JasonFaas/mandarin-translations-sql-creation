@@ -1,4 +1,4 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,5,30,,past,过去,guòqù,
--1,5,10,,present,现在,xiànzài,
--1,5,40,,future,将来,jiānglái,
+-1,100,30,,past,过去,guòqù,
+-1,100,10,,present,现在,xiànzài,
+-1,100,40,,future,将来,jiānglái,

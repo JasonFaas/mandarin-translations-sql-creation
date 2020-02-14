@@ -1,4 +1,4 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,5,44,{ref:1;type:meat_type}{ref:2;type:meat_type;ref_not:1},Do you want {ref:1} or {ref:2},你 要 {ref:1} 还是 {ref:2},nǐ yào {ref:1} háishì {ref:2},
--1,5,49,{ref:1;type:utensil}{ref:2;type:utensil;ref_not:1},Should we use {ref:1} or {ref:2},我们 用 {ref:1} 还是 {ref:2},wǒmen yòng {ref:1} háishì {ref:2},
--1,5,53,{ref:1;type:animal_pet}{ref:2;type:animal_pet;ref_not:1}{ref:3;type:int;min:2;max:9}{ref:4;type:int;min:2;max:9},I have {ref:3} {ref:1}s and {ref:4} {ref:2}s,我 有 {ref:3} 个 {ref:1} 和 {ref:4} 个 {ref:2},wǒ yǒu {ref:3} gè {ref:1} hé {ref:4} gè {ref:2},
+-1,100,44,{ref:1;type:meat_type}{ref:2;type:meat_type;ref_not:1},Do you want {ref:1} or {ref:2},你 要 {ref:1} 还是 {ref:2},nǐ yào {ref:1} háishì {ref:2},
+-1,100,49,{ref:1;type:utensil}{ref:2;type:utensil;ref_not:1},Should we use {ref:1} or {ref:2},我们 用 {ref:1} 还是 {ref:2},wǒmen yòng {ref:1} háishì {ref:2},
+-1,100,53,{ref:1;type:animal_pet}{ref:2;type:animal_pet;ref_not:1}{ref:3;type:int;min:2;max:9}{ref:4;type:int;min:2;max:9},I have {ref:3} {ref:1}s and {ref:4} {ref:2}s,我 有 {ref:3} 个 {ref:1} 和 {ref:4} 个 {ref:2},wǒ yǒu {ref:3} gè {ref:1} hé {ref:4} gè {ref:2},
