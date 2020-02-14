@@ -62,7 +62,7 @@ for filename in output_file_names:
     df_output[AUTO_LEVEL] = df_output.apply(lambda row: ioHelper.auto_level_if_no_level(row), axis=1)
 
     # TODO: Hold this for now, but remove if all is well
-    # df_new_input[MANUAL_LEVEL] = df_new_input.apply(lambda row: ioHelper.manual_level(row), axis=1)
+    df_output[MANUAL_LEVEL] = df_output.apply(lambda row: ioHelper.manual_level(row), axis=1)
 
     df_output.to_csv(output_csv_filename, index=False, header=True, columns=COLUMNS)
 

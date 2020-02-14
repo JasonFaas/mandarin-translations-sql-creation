@@ -55,7 +55,7 @@ class IoHelper(object):
         return pinyin_final.strip()
 
     def manual_level(self, row):
-        return str(int(float(row[self.MANUAL_LEVEL])))
+        return str(-1)
 
     def auto_level_if_no_level(self, row):
         return_level = 200
