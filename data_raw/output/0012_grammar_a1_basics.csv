@@ -1,2 +1,4 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,100,24,{ref:1;type:drink},I drank {ref:1},我 喝 {ref:1}了,wǒ hē {ref:1}le,
+-1,100,27,{ref:1;type:profession},Is her father a {ref:1},她 爸爸 是 {ref:1} 吗,tā bàba shì {ref:1} ma,
+-1,100,24,{ref:1;type:food},There is too much {ref:1},{ref:1} 太多 了,{ref:1} tài duōle,
