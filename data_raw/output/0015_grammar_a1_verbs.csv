@@ -3,4 +3,4 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,100,27,,Is there a television in your home?,你家 有 电视 吗 ？,nǐ jiā yǒu diànshì ma?,
 -1,100,46,{ref:1;type:phone_brand},This kind of cell phone is called an {ref:1}.,这种 手机 叫 {ref:1} 。,zhè zhǒng shǒujī jiào {ref:1}.,
 -1,100,42,{ref:1;type:place_type},Tonight we are going to the {ref:1}. Are you going?,晚上 我们 去 {ref:1} 。 你 去 吗 ？,wǎnshàng wǒmen qù {ref:1}. nǐ qù ma?,
--1,100,40,{ref:1;type:surname},His girlfriend's last name is {ref:1}.,他 女朋友 姓 {ref:1} 。,tā nǚ péngyǒu xìng {ref:1}.,
+-1,100,40,{ref:1;type:surname},His girlfriend's last name is {ref:1}.,他 女朋友 姓 {ref:1},tā nǚ péngyǒu xìng {ref:1},

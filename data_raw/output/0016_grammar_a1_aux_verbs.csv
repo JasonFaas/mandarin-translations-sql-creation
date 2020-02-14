@@ -2,5 +2,5 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,100,49,{ref:1;type:pronoun_amount;specific:singular}{ref:2;type:pronoun;fk_ref:1}{ref:3;type:food_type;specific:fruit}{ref:4;type:food;fk_ref:3}{ref:5;type:int;min:2;max:99},{ref:2} can eat {ref:5} {ref:4}s,{ref:2} 能 吃 {ref:5} 个 {ref:4},{ref:2} néng chī {ref:5} gè {ref:4},
 -1,100,46,{ref:1;type:expensive_item}{ref:2;type:int;min:1000;max:9999},Is it possible to buy {ref:1} for less than {ref:2} rmb?,{ref:2} 块 能 买 一个 {ref:1} 吗,{ref:2} kuài néng mǎi yīgè {ref:1} ma?,
 -1,100,66,,I can program computers,我会 编程,wǒ huì biānchéng,
--1,100,41,{ref:1;type:pronoun}{ref:2;type:city_name},{ref:2} is planning to go to {ref:2} this year,{ref:1} 今年 要 去 {ref:2},{ref:1} jīnnián yào qù {ref:2},
+-1,100,41,{ref:1;type:pronoun}{ref:2;type:city_name},{ref:1} is planning to go to {ref:2} this year,{ref:1} 今年 要 去 {ref:2},{ref:1} jīnnián yào qù {ref:2},
 -1,100,64,{ref:1;type:int;min:18;max:22},After you are {ref:1} years old; you may drink alcohol.,{ref:1} 岁 以后 可以 喝酒,{ref:1} suì yǐhòu kěyǐ hējiǔ.,
