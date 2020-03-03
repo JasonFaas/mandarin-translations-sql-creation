@@ -6,12 +6,22 @@ fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
 -1,100,,,Is everyone here?,大家 都 来 了 吗,
 -1,100,,{ref:1;type:flavors},Does everyone like eating {ref:1} food?,大家 都 喜欢 吃{ref:1} 吗,
 -1,100,,{ref:1;type:acquaintance}{ref:2;type:relative_immediate},Every day {ref:1} calls {ref:2} on the phone,{ref:1}每天都打电话给{ref:2},
+-1,100,,,Who is in a meeting in there,谁 在 里面 开会,
+-1,100,,{ref:1;type:acquaintance},{ref:1} is making a phone class; she does not have time to see you,{ref:1}在打电话;没有时间见你,
+-1,100,,,You are driving right now; you can't play with your cell phone,你 正在 开车，不 可以 玩 手机,
+-1,100,,{ref:1;type:time_of_day}{ref:2;type:secondary_subjects},Yesterday {ref:1} I was continuously doing {ref:2} homework,昨天 {ref:1} 我 一直 在 做{ref:2}作业,
+-1,100,,{ref:1;type:relative_immediate}{ref:2;type:activities_coming_of_age},{ref:1} has never {ref:2},{ref:1} 一直都不{ref:2},
+-1,100,,,We have already gotten married,我们已经结婚了,
+-1,100,,{ref:1;type:phone_brand},I already bought a new phone; I bought a {ref:1},我已经买手机了；我买{ref:1}了,
+-1,100,,,It is already really late; let's return home,已经很晚了；我们回家,
+-1,100,,{ref:1;type:written_language;specific:English}{ref:2;type:written_language;ref_not:1},Why should I want to study {ref:2}; I already know {ref:1},为什么我应该学{ref:2}；我已经知道{ref:1},
+-1,100,,{ref:1;type:spoken_language}{ref:2;type:acquaintance},{ref:2} doesn't study {ref:1} anymore,{ref:2}已经不学{ref:1}了,
+-1,100,,{ref:1;type:int;min:5;max:30},I am always {ref:1} minutes late,我总是迟到{ref:1}分钟,
+-1,100,,,I always take a taxi to work,我总是上出租车去上班,
 -1,100,,,,,
 -1,100,,,,,
--1,100,,,,,
--1,100,,,,,
-
 
 
 
 -1,100,57,{ref:1;type:country_name}{ref:2;type:country_name;ref_not:1},I have only been to {ref:1} and {ref:2},我 只 去过 {ref:1} 和 {ref:2},wǒ zhǐ qùguò {ref:1} hé {ref:2},
+
