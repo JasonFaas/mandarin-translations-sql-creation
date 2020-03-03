@@ -1,0 +1,4 @@
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
+-1,100,,,I'm starving,我饿死了,
+-1,100,,,hot to death; lit.,热死了,
+-1,100,,{ref:3;type:clothing_type}{ref:4;type:color},This {ref:2} {ref:4} is totally hideous,这 个 {ref:4} {ref:2} 丑 死了
