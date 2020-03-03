@@ -1,5 +1,15 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,100,,,I'm starving,我饿死了,
+-1,100,,{ref:1;type:int;min:2;max:4},The meanings of these {ref:1} words are pretty much the same,这{ref:1}个词的意思差不多,
+-1,100,,,These homes are all about the same,这 几 个 房子 都 差不多,
+-1,100,,{ref:1;type:clothing_type}{ref:2;type:shoe_type},That {ref:1} and these {ref:2} price are about the same,那{ref:1}和这{ref:2}的价格差不多,
+-1,100,,{ref:1;type:pronoun_amount;specific:plural}{ref:2;type:pronoun;fk_ref:1},{ref:2} have almost arrived,{ref:2}差不多到了,
+-1,100,,,Is everyone here?,大家 都 来 了 吗,
+-1,100,,{ref:1;type:flavors},Does everyone like eating {ref:1} food?,大家 都 喜欢 吃{ref:1} 吗,
+-1,100,,{ref:1;type:acquaintance}{ref:2;type:relative_immediate},Every day {ref:1} calls {ref:2} on the phone,{ref:1}每天都打电话给{ref:2},
+-1,100,,,,,
+-1,100,,,,,
+-1,100,,,,,
+-1,100,,,,,
 
 
 
