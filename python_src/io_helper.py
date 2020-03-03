@@ -182,7 +182,10 @@ class IoHelper(object):
 
             if not inside_bracket:
                 with_spaces += ' '
-        return with_spaces.strip()
+
+        with_spaces = with_spaces.replace(' ；', '；')
+        strip = with_spaces.strip()
+        return strip
 
     def pinyin_2_none_to_empty(self, row):
         pinyin_2 = row[self.PINYIN_2]
@@ -214,12 +217,13 @@ class IoHelper(object):
         translation_extra_data = gt_translation.extra_data['translation']
         print(translation_extra_data)
 
-        data = self.get_pinyin_from_translation_extra_data(translation_extra_data)
-        if data.count(' ') != hanzi_value.count(' '):
-            print("Spaces don't match {} :: {}".format(data, hanzi_value))
+        pinyin_with_spaces = self.get_pinyin_from_translation_extra_data(translation_extra_data)
+        pinyin_with_spaces = pinyin_with_spaces.replace('}le', '} le')
+        if pinyin_with_spaces.count(' ') != hanzi_value.count(' '):
+            print("Spaces don't match {} :: {}".format(pinyin_with_spaces, hanzi_value))
             exit(0)
 
-        return data
+        return pinyin_with_spaces
 
     def get_pinyin_from_translation_extra_data(self, translation_extra_data):
         if len(translation_extra_data) < 2:
