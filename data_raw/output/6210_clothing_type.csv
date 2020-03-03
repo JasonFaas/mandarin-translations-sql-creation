@@ -1,29 +1,29 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,100,,,skirt,裙子
--1,100,,,qipao,旗袍
--1,100,,,dress,连衣裙
--1,100,,,shorts,短裤
--1,100,,,jeans,牛仔裤
--1,100,,,pants,裤子
--1,100,,,t-shirt,T恤
--1,100,,,dress shirt/blouse,衬衫
--1,100,,,tuxedo,燕尾服
--1,100,,,suit,西装
--1,100,,,tie,领带
--1,100,,,bathing suit,泳衣
--1,100,,,swim trunks,泳裤
--1,100,,,bikini,比基尼
--1,100,,,pajamas,睡衣
--1,100,,,socks,短袜
--1,100,,,coat,外套
--1,100,,,blazer,夹克
--1,100,,,vest,背心
--1,100,,,hoodie,卫衣
--1,100,,,Sweater,毛衣
--1,100,,,Sweatshirt,运动衫
--1,100,,,Windbreaker,风衣
--1,100,,,Scarf,围巾
--1,100,,,Gloves,手套
--1,100,,,Mittens,连指手套
--1,100,,,Earmuffs,耳罩
--1,100,,,Hat,帽子
+-1,100,30,,skirt,裙子,qúnzi,
+-1,100,60,,qipao,旗袍,qípáo,
+-1,100,48,,dress,连衣裙,liányīqún,
+-1,100,36,,shorts,短裤,duǎnkù,
+-1,100,50,,jeans,牛仔裤,niúzǎikù,
+-1,100,30,,pants,裤子,kùzi,
+-1,100,400,,t-shirt,T 恤,t xù,
+-1,100,30,,dress shirt/blouse,衬衫,chènshān,
+-1,100,200,,tuxedo,燕尾服,yànwěifú,
+-1,100,36,,suit,西装,xīzhuāng,
+-1,100,48,,tie,领带,lǐngdài,
+-1,100,18,,bathing suit,泳衣,yǒngyī,
+-1,100,30,,swim trunks,泳 裤,yǒng kù,
+-1,100,236,,bikini,比基尼,bǐjīní,
+-1,100,12,,pajamas,睡衣,shuìyī,
+-1,100,39,,socks,短 袜,duǎn wà,
+-1,100,42,,coat,外套,wàitào,
+-1,100,54,,blazer,夹克,jiákè,
+-1,100,48,,vest,背心,bèixīn,
+-1,100,30,,hoodie,卫衣,wèiyī,
+-1,100,30,,Sweater,毛衣,máoyī,
+-1,100,28,,Sweatshirt,运动 衫,yùndòng shān,
+-1,100,24,,Windbreaker,风衣,fēngyī,
+-1,100,50,,Scarf,围巾,wéijīn,
+-1,100,50,,Gloves,手套,shǒutào,
+-1,100,65,,Mittens,连 指 手套,lián zhǐ shǒutào,
+-1,100,54,,Earmuffs,耳 罩,ěr zhào,
+-1,100,30,,Hat,帽子,màozi,

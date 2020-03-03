@@ -1,12 +1,12 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,100,,,Cotton,棉
--1,100,,,Silk,丝
--1,100,,,Polyester,聚酯纤维
--1,100,,,Nylon,尼龙
--1,100,,,Velvet,绒
--1,100,,,Wool,羊毛
--1,100,,,Denim,牛仔布
--1,100,,,Canvas,帆布
--1,100,,,Leather,皮革
--1,100,,,Fur,毛皮
--1,100,,,Linen,亚麻
+-1,100,36,,Cotton,棉,mián,
+-1,100,30,,Silk,丝,sī,
+-1,100,254,,Polyester,聚 酯 纤维,jù zhǐ xiānwéi,
+-1,100,200,,Nylon,尼龙,nílóng,
+-1,100,36,,Velvet,绒,róng,
+-1,100,36,,Wool,羊毛,yángmáo,
+-1,100,61,,Denim,牛仔 布,niúzǎi bù,
+-1,100,66,,Canvas,帆布,fānbù,
+-1,100,60,,Leather,皮革,pígé,
+-1,100,42,,Fur,毛皮,máopí,
+-1,100,48,,Linen,亚麻,yàmá,

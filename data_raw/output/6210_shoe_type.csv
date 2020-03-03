@@ -1,14 +1,14 @@
 fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
--1,100,,,Shoe,鞋
--1,100,,,Shoelaces,鞋带
--1,100,,,Flip-flops,人字拖
--1,100,,,Slippers,拖鞋
--1,100,,,Sneakers,运动鞋
--1,100,,,Sandals,凉鞋
--1,100,,,Rain boots,雨靴
--1,100,,,High heels,高跟鞋
--1,100,,,Boots,靴子
--1,100,,,Leather shoes,皮鞋
--1,100,,,Moccasins,鹿皮鞋
--1,100,,,Canvas shoes,帆布鞋
--1,100,,,Clogs,木屐
+-1,100,18,,Shoe,鞋,xié,
+-1,100,33,,Shoelaces,鞋 带,xié dài,
+-1,100,46,,Flip-flops,人 字 拖,rén zì tuō,
+-1,100,54,,Slippers,拖鞋,tuōxié,
+-1,100,28,,Sneakers,运动 鞋,yùndòng xié,
+-1,100,42,,Sandals,凉鞋,liángxié,
+-1,100,206,,Rain boots,雨靴,yǔxuē,
+-1,100,42,,High heels,高跟鞋,gāogēnxié,
+-1,100,200,,Boots,靴子,xuēzi,
+-1,100,30,,Leather shoes,皮鞋,píxié,
+-1,100,215,,Moccasins,鹿 皮鞋,lù píxié,
+-1,100,84,,Canvas shoes,帆布 鞋,fānbù xié,
+-1,100,230,,Clogs,木屐,mùjī,
