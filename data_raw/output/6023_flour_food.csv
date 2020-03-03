@@ -1,0 +1,9 @@
+fk_parent,Manual_Level,Auto_Level,Blanks,English,Hanzi,Pinyin,2nd_Pinyin
+food_type.flour food,100,10,,rice,米饭,mǐfàn,
+food_type.flour food,100,20,,noodles,面条,miàntiáo,
+food_type.flour food,100,40,,dumplings,饺子,jiǎozi,
+food_type.flour food,100,40,,stuffed buns,包子,bāozi,
+food_type.flour food,100,50,,steamed bread,馒头,mántou,
+food_type.flour food,100,42,,sesame seed cake,烧饼,shāobǐng,
+food_type.flour food,100,36,,fried bread steak,油条,yóutiáo,
+food_type.flour food,100,30,,cake,蛋糕,dàngāo,
